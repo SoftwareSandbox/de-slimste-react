@@ -7,7 +7,7 @@ var reactify = require('reactify'); //JSX to JS
 var source = require('vinyl-source-stream'); // text streams?
 var concat = require('gulp-concat');
 var lint = require('gulp-eslint');
-
+var jasmine = require('gulp-jasmine');
 
 var config = {
     port: 9999,
@@ -15,6 +15,7 @@ var config = {
     paths: {
         html: './src/*.html',
         js: './src/**/*.js',
+        test: './test/**/*.js',
         css: [
             'node_modules/bootstrap/dist/css/bootstrap.min.css',
             'node_modules/bootstrap/dist/css/bootstrap-theme.min.css',
@@ -79,11 +80,17 @@ gulp.task('lint', function () {
         .pipe(lint.format());
 });
 
+gulp.task('test', function() {
+    return gulp.src(config.paths.test)
+        // gulp-jasmine works on filepaths so you can't have any plugins before it 
+        .pipe(jasmine());
+});
 
 gulp.task('watch', function () {
     gulp.watch(config.paths.html, ['html']);
-    gulp.watch(config.paths.js, ['js', 'lint']);
+    gulp.watch(config.paths.js, ['js', 'lint', 'test']);
+    gulp.watch(config.paths.test, ['test']);
 });
 
-gulp.task('default', ['html', 'js', 'css', 'lint', 'images', 'open', 'watch']);
+gulp.task('default', ['html', 'js', 'css', 'lint', 'test', 'images', 'open', 'watch']);
 
