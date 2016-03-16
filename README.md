@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/SoftwareSandbox/de-slimste-react.png?label=ready&title=Ready)](https://waffle.io/SoftwareSandbox/de-slimste-react)
 # De slimste react
 
 ## Getting started
