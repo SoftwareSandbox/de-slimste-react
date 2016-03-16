@@ -9,3 +9,6 @@
 3. goto localhost:9999
 4. ???
 5. PROFIT 
+
+## Waffles
+[![Throughput Graph](https://graphs.waffle.io/SoftwareSandbox/de-slimste-react/throughput.svg)](https://waffle.io/SoftwareSandbox/de-slimste-react/metrics)
