@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
+import Navigator from '../common/navigator';
 
 class CollectiefGeheugenPage extends Component {
     render() {
         return (
             <div>
-                <p>collectief geheugen</p>
+                <Navigator vorige="galerij" titel="Collectief geheugen" volgende="finale"></Navigator>
             </div>
         );
     }

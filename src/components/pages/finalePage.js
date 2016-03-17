@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
+import Navigator from '../common/navigator';
 
 class FinalePage extends Component {
     render() {
         return (
             <div>
-            <p>finale</p>
+                <Navigator vorige="collectiefgeheugen" titel="Finale"></Navigator>
             </div>
         );
     }

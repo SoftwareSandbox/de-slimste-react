@@ -5,7 +5,9 @@ import Navigator from './common/navigator';
 class Home extends Component {
     render() {
         return (
-            <Navigator previous="authors" titel="3-6-9" next="driezesnegen"></Navigator>
+            <div>
+                <Navigator titel="Start" volgende="driezesnegen"></Navigator>
+            </div>
         );
     }
 }
