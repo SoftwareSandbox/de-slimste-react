@@ -6,7 +6,7 @@ class DrieZesNegenPage extends Component {
         return (
             <div>
                 <p>driezesnegen</p>
-                <Navigator previous="/" titel="3-6-9" next="opendeur"></Navigator>
+                <Navigator previous="home" titel="3-6-9" next="opendeur"></Navigator>
             </div>
         );
     }

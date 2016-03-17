@@ -17,6 +17,7 @@ import FinalePage from './components/pages/finalePage';
 const routes = (
     <Route name="app" path="/" handler={App}>
         <DefaultRoute handler={Homepage} />
+        <Route name="home" handler={Homepage} />
         <Route name="authors" handler={AuthorPage} />
 
         <Route name="driezesnegen" handler={DrieZesNegenPage} />
