@@ -7,11 +7,11 @@ import ReactTestUtils from 'react-addons-test-utils';
 import PuzzelPage from '../src/components/pages/puzzelPage';
 import Navigator from '../src/components/common/navigator';
 
-describe('testRenderFunction', () => {
-	it('renders div with navigator', () => {
+describe('PuzzelPage component', () => {
+	it('renders div with Navigator', () => {
 		let puzzelPage = ReactTestUtils.renderIntoDocument(<PuzzelPage/>);
 		let navigator = ReactTestUtils.scryRenderedComponentsWithType(puzzelPage, Navigator);
-		expect(navigator.length).toBe(1);
+		expect(navigator).toBeTruthy();
 	});
 
 });
