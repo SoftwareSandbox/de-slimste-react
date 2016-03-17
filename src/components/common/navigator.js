@@ -15,10 +15,12 @@ class Navigator extends Component {
 
     render() {
         return (
-            <div>
-                <p>
-                <Link to={this.props.previous}>Prev</Link> {this.props.titel} <Link to={this.props.next}>Next</Link>
-                </p>
+            <div className="title">
+                <h1>
+                    <Link to={this.props.previous}><span id="vorigeRonde" className="fa fa-caret-left"></span></Link>
+                    &nbsp;&nbsp;&nbsp;{this.props.titel}&nbsp;&nbsp;&nbsp;
+                    <Link to={this.props.next}><span id="volgendeRonde" className="fa fa-caret-right"></span></Link>
+                </h1>
             </div>
         );
     }

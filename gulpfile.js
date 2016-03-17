@@ -15,9 +15,7 @@ const config = {
         html: './src/*.html',
         js: './src/**/*.js',
         css: [
-            'node_modules/bootstrap/dist/css/bootstrap.min.css',
-            'node_modules/bootstrap/dist/css/bootstrap-theme.min.css',
-            'node_modules/toastr/toastr.css'
+            'src/css/*'
         ],
         dist: './dist',
         images: './src/images/*',
@@ -72,8 +70,8 @@ gulp.task('js', () => {
 
 gulp.task('css', () => {
     gulp.src(config.paths.css)
-        .pipe(concat('bundle.css'))
-        .pipe(gulp.dest(config.paths.dist + '/css'));
+        .pipe(gulp.dest(config.paths.dist + "/css"))
+        .pipe(connect.reload());
 });
 
 gulp.task('lint', () => {
