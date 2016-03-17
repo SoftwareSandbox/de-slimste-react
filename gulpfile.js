@@ -91,6 +91,7 @@ gulp.task('jest', shell.task('npm test', {
 
 gulp.task('watch', () => {
     gulp.watch(config.paths.html, ['html']);
+    gulp.watch(config.paths.css, ['css']);
     gulp.watch(config.paths.js, ['js', 'lint', 'jest']);
     gulp.watch(config.paths.tests, ['jest']);
     gulp.watch(config.paths.images, ['images']);
