@@ -7,6 +7,8 @@ import AuthorPage from './components/authors/authorPage';
 import AboutPage from './components/about/aboutPage';
 import NotFoundPage from './components/notFoundPage';
 import ManageAuthorPage from './components/authors/manageAuthorPage';
+
+import InvoerenSpelersPage from './components/pages/invoerenSpelersPage';
 import DrieZesNegenPage from './components/pages/drieZesNegenPage';
 import OpenDeurPage from './components/pages/openDeurPage';
 import PuzzelPage from './components/pages/puzzelPage';
@@ -16,9 +18,11 @@ import FinalePage from './components/pages/finalePage';
 
 const routes = (
     <Route name="app" path="/" handler={App}>
-        <DefaultRoute handler={Homepage} />
+        <Route handler={InvoerenSpelersPage} />
         <Route name="home" handler={Homepage} />
         <Route name="authors" handler={AuthorPage} />
+
+        <DefaultRoute name="invoerenSpelers" handler={InvoerenSpelersPage} />
 
         <Route name="driezesnegen" handler={DrieZesNegenPage} />
         <Route name="opendeur" handler={OpenDeurPage} />
