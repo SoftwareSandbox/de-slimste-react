@@ -5,7 +5,7 @@ const gulp = require('gulp'),
       babelify = require('babelify'),
       source = require('vinyl-source-stream'), //Use conventional text streams with Gulp
       concat = require('gulp-concat'),
-      lint = require('gulp-eslint')
+      lint = require('gulp-eslint'),
       friendlyFormatter = require('eslint-friendly-formatter'); //export EFF_NO_GRAY=true in console if you can't see the output
 
 const config = {
