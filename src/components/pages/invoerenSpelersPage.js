@@ -14,12 +14,7 @@ class InvoerenSpelersPage extends Component {
     constructor(props, context) {
         super(props, context); //It's very important to pass context to super() so that the router will work
         this.state = {
-            spelers: {
-                speler1: '',
-                speler2: '',
-                speler3: ''
-                
-            },
+            spelers: ['', '', ''],
             aangepast: false
         };
     }
@@ -38,7 +33,7 @@ class InvoerenSpelersPage extends Component {
         let waardeX = this.state.spelers[veld];
         let x = 0;
         this.setState({
-            spelers: this.state.spelers,
+            spelers: [this.state.spelers[0], this.state.spelers[1], this.state.spelers[2]],
             aangepast: true
         });
     };
@@ -60,23 +55,13 @@ class InvoerenSpelersPage extends Component {
 
     spelerNamenGeldig() {
         let geldigeNamen = true;
-        this.state.errors = {
-                                speler1: '',
-                                speler2: '',
-                                speler3: ''
-                            };
+        this.state.errors = ['', '', ''];
 
-        if(this.state.spelers.speler1.length === 0) {
-            this.state.errors.speler1 = "Geen lege naam toegestaan";
-            geldigeNamen = false;
-        }
-        if(this.state.spelers.speler2.length === 0) {
-            this.state.errors.speler2 = "Geen lege naam toegestaan";
-            geldigeNamen = false;
-        }
-        if(this.state.spelers.speler3.length === 0) {
-            this.state.errors.speler3 = "Geen lege naam toegestaan";
-            geldigeNamen = false;
+        for (let i = 0; i < this.state.spelers.length; i++) {
+            if(this.state.spelers[i].length === 0) {
+                this.state.errors[i] = "Geen lege naam toegestaan";
+                geldigeNamen = false;
+            }
         }
 
         this.setState({errors: this.state.errors});
@@ -92,12 +77,11 @@ class InvoerenSpelersPage extends Component {
     render() {
         return (
                 <div>
-                    <h1>Manage spelers</h1>
+                    <h1>Voer de namen van de spelers in!</h1>
                     <form>
                     <TextInput
-                        name="speler1"
-                        label="Speler 1"
-                        value={this.state.spelers.speler1}
+                        name="0"
+                        value={this.state.spelers[0]}
                         onChange={this.setSpelersState}
                         placeholder="Speler 1"
                         error=''//{this.state.errors.speler1}
@@ -105,9 +89,8 @@ class InvoerenSpelersPage extends Component {
                     />
 
                     <TextInput
-                        name="speler2"
-                        label="Speler 2"
-                        value={this.state.spelers.speler2}
+                        name="1"
+                        value={this.state.spelers[1]}
                         onChange={this.setSpelersState}
                         placeholder="Speler 2"
                         error=''//{this.state.errors.speler2}
@@ -115,16 +98,15 @@ class InvoerenSpelersPage extends Component {
                     />
 
                     <TextInput
-                        name="speler3"
-                        label="Speler 3"
-                        value={this.state.spelers.speler3}
+                        name="2"
+                        value={this.state.spelers[2]}
                         onChange={this.setSpelersState}
                         placeholder="Speler 3"
                         error=''//{this.state.errors.speler3}
                         af={true}
                     />
 
-                    <input type="submit" value="Start de quiz" className="btn btn-default" onClick={this.bewaarSpelers}/>
+                    <input type="submit" value="Start de quiz" className="slimsteQuizConfiguratie" onClick={this.bewaarSpelers}/>
                 </form>
                 </div>
             );
