@@ -1,16 +1,16 @@
-"use strict";
+import React, {Component} from 'react';
+import {Link} from 'react-router';
 
-var React = require('react');
+class Home extends Component {
+    render() {
+        return (
+                <div className="jumbotron">
+                    <h1>Pluralsight Admin</h1>
+                    <p> React, React Router, and Flux for teh w1n!!</p>
+                    <Link to="about" className="btn btn-primary btn-lg">Learn more</Link>
+                </div>
+            );
+    }
+}
 
-var Home = React.createClass({
-	render: function() {
-		return (
-			<div className="jumbotron">
-				<h1>Pluralsight Admin</h1>
-				<p>React, React Router, and Flux for ultra-responsive web apps.</p>
-			</div>
-		);
-	}
-});
-
-module.exports = Home;
+export default Home;

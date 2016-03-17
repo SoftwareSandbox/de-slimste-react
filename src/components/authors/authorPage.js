@@ -1,33 +1,37 @@
-"use strict";
+import React, {Component} from 'react';
+import {Link} from 'react-router'; 
+import AuthorList from './AuthorList';
+import AuthorStore from '../../stores/authorStore';
+import AuthorActions from '../../actions/authorActions';
 
-var React = require('react');
-var AuthorApi = require('../../api/authorApi');
-var AuthorList = require('./authorList'); //view to this controllerview
+class AuthorPage extends Component {
 
-// AuthorPage is ControllerView
-// it's purpose is to get data and pass it down to the "dumb" View,
-// in this case: AuthorList
-var AuthorPage = React.createClass({
-	getInitialState: function() {
-		return {
-			authors: []
-		};
-	},
+    constructor() {
+        super();
+        this.state = {authors: AuthorStore.getAllAuthors()};
+    }
 
-	componentDidMount: function() {
-		if (this.isMounted()) {
-			this.setState({ authors: AuthorApi.getAllAuthors() });
-		}
-	},
+    _onChange() {
+        this.setState({authors: AuthorStore.getAllAuthors()});
+    }
 
-	render: function() {
-		return (
-			<div>
-				<h1>Authors</h1>
-				<AuthorList authors={this.state.authors} />
-			</div>
-		);
-	}
-});
+    componentWillMount() {
+        AuthorStore.addChangeListener(this._onChange.bind(this));
+    }
 
-module.exports = AuthorPage;
+    componentWillUnmount() {
+        AuthorStore.removeChangeListener(this._onChange.bind(this));
+    }
+
+    render() {
+        return (
+            <div>
+                <h1>Authors</h1>
+                <AuthorList authors={this.state.authors} />
+                <Link to="addAuthor" className="btn btn-default">Add Author</Link>
+            </div>
+        );
+    }
+}
+
+export default AuthorPage;
