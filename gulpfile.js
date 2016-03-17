@@ -17,6 +17,7 @@ const config = {
     paths: {
         html: './src/*.html',
         js: './src/**/*.js',
+        tests: './__tests__/**/*.js',
         css: [
             'src/css/*'
         ],
@@ -85,13 +86,13 @@ gulp.task('lint', () => {
 
 gulp.task('jest', shell.task('npm test', {
     // So our task doesn't error out when a test fails
-    ignoreErrors: true,
-    moduleFileExtensions: ["js"]
+    ignoreErrors: true
 }));
 
 gulp.task('watch', () => {
     gulp.watch(config.paths.html, ['html']);
-    gulp.watch(config.paths.js, ['js', 'lint']);
+    gulp.watch(config.paths.js, ['js', 'lint', 'jest']);
+    gulp.watch(config.paths.tests, ['jest']);
     gulp.watch(config.paths.images, ['images']);
 });
 

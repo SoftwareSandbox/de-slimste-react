@@ -3,12 +3,6 @@ import {Link} from 'react-router';
 
 class Navigator extends Component {
 
-    static propTypes = {
-        vorige: PropTypes.string,
-        titel: PropTypes.string.required,
-        volgende: PropTypes.string
-    };
-
     constructor(props) {
         super(props);
     }
@@ -16,7 +10,7 @@ class Navigator extends Component {
     render() {
         return (
             <div className="title">
-                <h1>
+                <h1 ref="navTitle">
                     {this.props.vorige ? <Link to={this.props.vorige}><span id="vorigeRonde" className="fa fa-caret-left"></span></Link> : null}
                     &nbsp;&nbsp;&nbsp;{this.props.titel}&nbsp;&nbsp;&nbsp;
                     {this.props.volgende ? <Link to={this.props.volgende}><span id="volgendeRonde" className="fa fa-caret-right"></span></Link> : null }
@@ -26,5 +20,10 @@ class Navigator extends Component {
     }
 }
 
+Navigator.propTypes = {
+    vorige: PropTypes.string,
+    titel: PropTypes.string.isRequired,
+    volgende: PropTypes.string
+};
 
 export default Navigator;
