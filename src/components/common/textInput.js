@@ -4,7 +4,6 @@ class TextInput extends Component {
 
     static propTypes = {
         name: PropTypes.string.isRequired,
-        label: PropTypes.string.isRequired,
         onChange: PropTypes.func.isRequired,
         placeholder: PropTypes.string,
         value: PropTypes.string,
@@ -29,7 +28,7 @@ class TextInput extends Component {
                 <div className="field">
                     <input type="text"
                             name={this.props.name}
-                            className="form-control"
+                            className="slimsteQuizConfiguratie"
                             placeholder={this.props.placeholder}
                             ref={this.props.name}
                             onChange={this.props.onChange}
