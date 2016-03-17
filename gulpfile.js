@@ -6,7 +6,10 @@ const gulp = require('gulp'),
       source = require('vinyl-source-stream'), //Use conventional text streams with Gulp
       concat = require('gulp-concat'),
       lint = require('gulp-eslint'),
+      shell = require('gulp-shell'),
       friendlyFormatter = require('eslint-friendly-formatter'); //export EFF_NO_GRAY=true in console if you can't see the output
+
+      // plugins = require('gulp-load-plugins')({scope: ['dependencies']}),
 
 const config = {
     port: 9000,
@@ -81,6 +84,12 @@ gulp.task('lint', () => {
                 .pipe(lint({config: 'eslint.config.json'}))
                 .pipe(lint.format(friendlyFormatter));
 });
+
+gulp.task('jest', shell.task('npm test', {
+    // So our task doesn't error out when a test fails
+    ignoreErrors: true,
+    moduleFileExtensions: ["js"]
+}));
 
 gulp.task('watch', () => {
     gulp.watch(config.paths.html, ['html']);

@@ -1,14 +1,27 @@
 {
-  "name": "flux-react",
-  "version": "1.0.0",
-  "description": "A simple React app to learn the basics",
-  "main": "index.js",
-  "repository": "https://github.com/PortableStick/pluralsight-flux-react",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Greg Smith",
+  "name": "de-slimste-react",
+  "version": "0.0.1",
+  "description": "De Slimste Mens in React",
+  "author": "SoftwareSandbox",
   "license": "ISC",
+  "repository": "https://github.com/SoftwareSandbox/de-slimste-react",
+  "main": "main.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "testPathDirs": ["__tests__"],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/"
+    ],
+    "unmockedModulePathPatterns": [
+      "./node_modules/react",
+      "./node_modules/fbjs",
+      "./node_modules/react-dom",
+      "./node_modules/react-addons-test-utils"
+    ]
+  },
   "dependencies": {
     "babel": "6.3.26",
     "babel-eslint": "4.1.7",
@@ -21,16 +34,19 @@
     "browserify": "11.0.1",
     "eslint-friendly-formatter": "^1.2.2",
     "flux": "2.0.3",
+    "jest-cli": "^0.8",
     "gulp": "3.9.0",
     "gulp-concat": "2.6.0",
     "gulp-connect": "2.2.0",
     "gulp-eslint": "0.15.0",
     "gulp-open": "1.0.0",
+    "gulp-shell": "^0.4.1",
     "gulp-sourcemaps": "1.6.0",
     "jquery": "2.1.4",
     "lodash": "3.10.0",
     "react": "0.13.3",
     "react-router": "0.13.3",
+    "react-tools": "0.13.3",
     "reactify": "1.1.1",
     "toastr": "2.1.0",
     "vinyl-source-stream": "1.1.0"

@@ -1,0 +1,682 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"di",
+				"diagnosticModel"
+			],
+			[
+				"fun",
+				"funkshun"
+			],
+			[
+				"isY",
+				"isYoungerThan"
+			],
+			[
+				"fu",
+				"funkshun"
+			],
+			[
+				"play",
+				"playersChoice"
+			],
+			[
+				"tie",
+				"tieSentence"
+			],
+			[
+				"los",
+				"lossSentence"
+			],
+			[
+				"p",
+				"paper"
+			],
+			[
+				"r",
+				"rock"
+			],
+			[
+				"R",
+				"Rock"
+			],
+			[
+				"s",
+				"scissors"
+			],
+			[
+				"be",
+				"beforeEach"
+			],
+			[
+				"game",
+				"gamesChoice"
+			],
+			[
+				"Roc",
+				"RockPaperScissorsGame"
+			],
+			[
+				"gro",
+				"grownFromSeed"
+			],
+			[
+				"pr",
+				"producedSeed"
+			],
+			[
+				"pix",
+				"pixelPrototype"
+			],
+			[
+				"for",
+				"formula"
+			],
+			[
+				"fo",
+				"formula"
+			],
+			[
+				"re",
+				"reducedPrice"
+			],
+			[
+				"mo",
+				"movieTypes"
+			],
+			[
+				"qu",
+				"quotation"
+			],
+			[
+				"sourc",
+				"sourceBase"
+			],
+			[
+				"Comm",
+				"Command"
+			],
+			[
+				"command",
+				"commandBuilder"
+			],
+			[
+				"Comman",
+				"CommandBuilder"
+			],
+			[
+				"param",
+				"paramMap"
+			],
+			[
+				"case",
+				"case class	case class"
+			],
+			[
+				"g",
+				"generation"
+			],
+			[
+				"is",
+				"isMissile"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "Packages/User/scala.sublime-build",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 127.0,
+		"last_filter": "babe",
+		"selected_items":
+		[
+			[
+				"babe",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"babel",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"bab",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"synt bab",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"synbab",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"cjsx",
+				"Set Syntax: CJSX"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"javasc",
+				"Set Syntax: JavaScript Next"
+			],
+			[
+				"java",
+				"Set Syntax: Java"
+			],
+			[
+				"diff",
+				"Set Syntax: Diff"
+			],
+			[
+				"esnex",
+				"Set Syntax: JavaScript Next"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"js",
+				"Set Syntax: JSON"
+			],
+			[
+				"sy java",
+				"Set Syntax: Java"
+			],
+			[
+				"jav",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"scala",
+				"ScalaFormat: Format Current File"
+			],
+			[
+				"syntax sca",
+				"Set Syntax: Scala"
+			],
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"rei",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"syntax xml",
+				"Set Syntax: XML"
+			]
+		],
+		"width": 416.0
+	},
+	"console":
+	{
+		"height": 440.0,
+		"history":
+		[
+			"import urllib.request,os; pr='Preferences.sublime-settings'; ip='ignored_packages'; n='Package Control'; s=sublime.load_settings(pr); ig=s.get(ip); ig.append(n); s.set(ip,ig); sublime.save_settings('Preferences.sublime-settings'); pf=n+'.sublime-package'; urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler())); by=urllib.request.urlopen('https://packagecontrol.io/'+pf.replace(' ','%20')).read(); open(os.path.join(sublime.installed_packages_path(),pf),'wb').write(by); ig.remove(n); s.set(ip,ig); sublime.save_settings(pr); print('Package Control: 3.0.0 upgrade successful!')",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/ws/de-slimste-react"
+	],
+	"file_history":
+	[
+		"/C/ws/reactFluxPluralsight/src/index.html",
+		"/C/ws/reactFluxPluralsight/src/components/homePage.js",
+		"/C/ws/reactFluxPluralsight/src/components/about/aboutPage.js",
+		"/C/ws/reactFluxPluralsight/src/components/common/header.js",
+		"/C/ws/reactFluxPluralsight/src/components/authors/authorList.js",
+		"/C/ws/reactFluxPluralsight/src/main.js",
+		"/C/ws/reactFluxPluralsight/src/api/authorApi.js",
+		"/C/ws/reactFluxPluralsight/src/api/authorData.js",
+		"/C/ws/reactFluxPluralsight/src/components/authors/authorPage.js",
+		"/C/ws/de-slimste-react/de-slimste-react.sublime-project",
+		"/C/Users/bktis/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/ws/JavaScriptCourse/Labs/Day1/exercises/lab5_scoping/3_ioc_container/ioc.es6.js",
+		"/C/ws/reactFluxPluralsight/.gitignore",
+		"/C/ws/information_radiators/dashboard/web/js/configuration.js",
+		"/C/ws/information_radiators/dashboard/web/burndown.html",
+		"/C/ws/information_radiators/dashboard/bin/proxyserver/ventouris/production/config.properties",
+		"/C/ws/information_radiators/dashboard/web/js/diagnostic.js",
+		"/C/ws/information_radiators/dashboard/web/dashboard.html",
+		"/C/ws/information_radiators/.project",
+		"/C/ws/JavaScriptCourse/Labs/Day1/solutions/lab4_closures/1_filtering/filter.es6.js",
+		"/C/ws/JavaScriptCourse/Labs/Day1/exercises/lab4_closures/1_filtering/filter.es6.js",
+		"/C/ws/JavaScriptCourse/Labs/Day1/exercises/lab3_classes/2_rock_paper_scissors/rock_paper_scissorsSpec.es6.js",
+		"/C/ws/JavaScriptCourse/Labs/Day1/exercises/lab4_closures/1_filtering/filterSpec.es6.js",
+		"/C/ws/JavaScriptCourse/Labs/Day1/solutions/lab4_closures/1_filtering/filterSpec.es6.js",
+		"/C/ws/vtkgol/.gitignore",
+		"/C/ws/JavaScriptCourse/Labs/Day1/exercises/lab4_closures/1_filtering/SpecRunner.html",
+		"/C/ws/JavaScriptCourse/Labs/Day1/solutions/lab4_closures/1_filtering/SpecRunner.html",
+		"/C/ws/JavaScriptCourse/Labs/Day1/exercises/lab2_prototype/2_gardener1/SpecRunner.html",
+		"/C/ws/JavaScriptCourse/Labs/Day1/exercises/lab1_basics/1_movietickets/movieticket.es6.js",
+		"/C/ws/JavaScriptCourse/Labs/Day1/exercises/lab2_prototype/2_gardener1/gardenerSpec.es6.js",
+		"/C/ws/JavaScriptCourse/Labs/Day1/solutions/lab5_scoping/1_gardener2/gardener.es6.js",
+		"/C/ws/JavaScriptCourse/Labs/Day1/exercises/lab4_closures/2_is_it_new/is_it_new.es6.js",
+		"/C/ws/JavaScriptCourse/Labs/Day1/exercises/lab3_classes/2_rock_paper_scissors/SpecRunner.html",
+		"/C/ws/JavaScriptCourse/Labs/Day1/exercises/lab3_classes/1_grayscale2/grayscale.es6.js",
+		"/C/ws/JavaScriptCourse/Labs/Day1/exercises/lab2_prototype/1_grayscale1/grayscale.es6.js",
+		"/C/ws/JavaScriptCourse/Labs/Day1/exercises/lab2_prototype/2_gardener1/gardener.es6.js",
+		"/C/ws/JavaScriptCourse/Labs/Day1/exercises/lab1_basics/2_calculate/calculate.es6.js",
+		"/C/ws/JavaScriptCourse/Labs/Day2/labs/lab5/scripts/app.js",
+		"/C/ws/entmob/src/test/resources/quotes/get.json",
+		"/C/ws/entmob/src/test/resources/quotes/post-quote.json",
+		"/C/ws/JavaScriptCourse/Labs/Day2/labs/lab4/scripts/app.js",
+		"/C/ws/pxl/entmob2015_7/vlaamsonderwijs-backend/build.gradle",
+		"/C/ws/JavaScriptCourse/Labs/Day2/labs/lab4/index.html",
+		"/C/ws/JavaScriptCourse/Labs/Day2/labs/lab4/scripts/app.es6.js",
+		"/C/ws/JavaScriptCourse/Labs/Day2/bower.json",
+		"/C/ws/JavaScriptCourse/Labs/Day2/labs/lab4/test/test.es6.js",
+		"/C/ws/JavaScriptCourse/Labs/Day2/package.json",
+		"/C/ws/JavaScriptCourse/Labs/Day2/gulpfile.babel.js",
+		"/C/ws/JavaScriptCourse/.gitignore",
+		"/C/ws/JavaScriptCourse/Labs/Day2/labs/lab2/index.html",
+		"/C/ws/JavaScriptCourse/Labs/Day2/karma.conf.js",
+		"/C/ws/JavaScriptCourse/Labs/Day2/.eslintrc",
+		"/C/ws/JavaScriptCourse/Labs/Day2/labs/lab3/target/test/test.es6.js",
+		"/C/ws/JavaScriptCourse/Labs/Day2/server.js",
+		"/C/ws/JavaScriptCourse/Labs/Day2/labs/lab3/target/vendor/angular-resource.min.js",
+		"/C/ws/JavaScriptCourse/Labs/Day2/labs/lab3/test/.eslintrc",
+		"/C/ws/JavaScriptCourse/Labs/Day2/labs/lab4/test/.eslintrc",
+		"/C/ws/JavaScriptCourse/Labs/Day2/labs/lab2/.eslintrc",
+		"/C/ws/JavaScriptCourse/Labs/Day2/labs/lab1/scripts/app.es6.js",
+		"/C/ws/JavaScriptCourse/Labs/Day2/gulpfile-babel.js",
+		"/C/ws/JavaScriptCourse/Labs/Server/package.json",
+		"/C/ws/entmob/src/test/resources/quotes/father-picksup-item.json",
+		"/C/ws/entmob/src/test/resources/quotes/desdemona-picksup-item.json",
+		"/C/ws/entmob/src/test/resources/quotes/post-item.json",
+		"/C/ws/entmob/src/test/resources/quotes/put-item.json",
+		"/C/ws/entmob/deps.txt",
+		"/C/ws/entmob/docker-compose.yml",
+		"/C/ws/entmob/restartDockerMachineWhenYouSwitchedWiFi.sh",
+		"/C/ws/entmob/README.md",
+		"/C/ws/techscreening/README.md",
+		"/C/ws/techscreening/.gitattributes",
+		"/C/ws/techscreening/.gitignore",
+		"/C/ws/entmob/gitignore",
+		"/C/ws/entmob/src/test/resources/striproute.json",
+		"/C/ws/entmob/build.gradle",
+		"/C/ws/entmob/settings.gradle",
+		"/C/ws/scalatron/sch3lpbot.scala",
+		"/C/ws/fiantje/Fiazard/build.gradle",
+		"//10.0.0.4/shared/software/Microsoft Windows 7 Sp1 Home Premium 64Bit 676534 NL/Crack/Microsoft Toolkit 2011.09.23 UK.iso",
+		"/C/ws/scalatron/.idea/compiler.xml",
+		"/C/Users/bktis/AppData/Roaming/Sublime Text 3/Packages/User/scala.sublime-build",
+		"/C/Users/bktis/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/ws/scalatron/scalatron.sublime-project",
+		"/C/ws/dev-flow-demo/devflow-demo/src/main/resources/dikken.xml"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"folder_exclude_patterns",
+			"folders",
+			"images",
+			"Authors",
+			"AuthorPage",
+			"Authors",
+			"AuthorPage",
+			"authors",
+			"Authors",
+			"authors",
+			"Authors",
+			"authors",
+			"Authors",
+			"authors",
+			"Authors",
+			"('../../",
+			"state",
+			"Authors",
+			"AuthorList",
+			"authors",
+			"Authors",
+			"About",
+			"about",
+			"About",
+			"about",
+			"homePage",
+			"Authors",
+			"Home",
+			"Schraepen",
+			"but",
+			"Tim",
+			"schraepen",
+			"tim",
+			"Schraepen",
+			"Tim",
+			"authors",
+			"homePage",
+			"Home",
+			"window",
+			"JQuery",
+			"React",
+			"Home",
+			"diagnosticModel",
+			"hasErrors",
+			"success",
+			"addFunds",
+			"allServersHaveResponded",
+			"diagnostic",
+			"url",
+			"funds",
+			"options",
+			"funkshun",
+			"isYoungerThanAndHasName",
+			"hasAgeBetween",
+			"joris",
+			"35",
+			"korneel",
+			"joris",
+			"isYoungerThanAndHasName",
+			"joris",
+			"name",
+			"negate",
+			"negateAll",
+			"negate",
+			"negateAll",
+			"than",
+			"pieter",
+			"people",
+			"isYoungerThan",
+			"let",
+			"toRemember",
+			"aNumber",
+			"negate",
+			"let playersChoice ",
+			"'Stop stealing my moves!'",
+			"`My ${gamesChoice} beats your ${playersChoice}! Loser!`",
+			"`Your ${playersChoice} beats my ${gamesChoice} :( You cheated. I'm sure of it.`",
+			"scissors",
+			"Scissors",
+			"paper",
+			"Paper",
+			"rock",
+			"Rock",
+			"rock",
+			"Rock",
+			"scissors",
+			"Scissors",
+			"paper",
+			"Paper",
+			"rock",
+			"Rock",
+			"rock",
+			"Rock",
+			"playerChoice",
+			"rock",
+			"playerChoice",
+			"scissors",
+			"rock",
+			"result",
+			"rock",
+			"Rock",
+			"And",
+			"function",
+			"pixelPrototype",
+			"seed",
+			"sownSeed",
+			"createPixel",
+			"firstArg",
+			"secondArg",
+			"(0+",
+			"operator",
+			"firstArg",
+			"args[0]",
+			"operator",
+			"formula",
+			"exec",
+			"regExec",
+			"get",
+			"return",
+			"build:test:unit",
+			"js",
+			"files.html",
+			"partials",
+			"html",
+			"files.html",
+			"build:app:html",
+			"min",
+			"rename"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 29.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 171.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sbt":
+	{
+		"height": 0.0
+	},
+	"output.sbt_error":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "de-slimste-react.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"main",
+				"src\\main.js"
+			],
+			[
+				"header",
+				"src\\components\\common\\header.js"
+			],
+			[
+				"ventourisprodproperties",
+				"dashboard\\bin\\proxyserver\\ventouris\\production\\config.properties"
+			],
+			[
+				"diag",
+				"dashboard\\web\\js\\diagnostic.js"
+			],
+			[
+				"lab4app",
+				"Day2\\labs\\lab4\\scripts\\app.js"
+			],
+			[
+				"bower.j",
+				"Day2\\bower.json"
+			],
+			[
+				"targetangular-res.min",
+				"Day2\\labs\\lab3\\target\\vendor\\angular-resource.min.js"
+			],
+			[
+				"karma",
+				"Day2\\karma.conf.js"
+			],
+			[
+				"lab.eslintrc",
+				"Day2\\labs\\lab4\\test\\.eslintrc"
+			],
+			[
+				".esl",
+				"Day2\\labs\\lab3\\test\\.eslintrc"
+			],
+			[
+				"lab1app.e",
+				"Day2\\labs\\lab1\\scripts\\app.es6.js"
+			],
+			[
+				"packag",
+				"Server\\package.json"
+			],
+			[
+				"server.js",
+				"Day2\\server.js"
+			],
+			[
+				"pack",
+				"Day2\\package.json"
+			],
+			[
+				"pac",
+				"Server\\package.json"
+			],
+			[
+				"pacak",
+				"Server\\package.json"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 263.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
