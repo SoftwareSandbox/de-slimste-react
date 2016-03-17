@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/SoftwareSandbox/de-slimste-react.png?label=ready&title=Ready)](https://waffle.io/SoftwareSandbox/de-slimste-react)
 # De slimste react
 
 ## Getting started
@@ -8,3 +9,6 @@
 3. goto localhost:9999
 4. ???
 5. PROFIT 
+
+## Waffles
+[![Throughput Graph](https://graphs.waffle.io/SoftwareSandbox/de-slimste-react/throughput.svg)](https://waffle.io/SoftwareSandbox/de-slimste-react/metrics)
