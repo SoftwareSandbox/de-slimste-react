@@ -1,3 +1,15 @@
-/**
- * Created by nielsj on 17/03/2016.
- */
+import React, {Component} from 'react';
+import Navigator from '../common/navigator';
+
+class DrieZesNegenPage extends Component {
+    render() {
+        return (
+            <div>
+                <p>driezesnegen</p>
+                <Navigator previous="/" titel="3-6-9" next="opendeur"></Navigator>
+            </div>
+        );
+    }
+}
+
+export default DrieZesNegenPage;
