@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Navigation} from 'react-router';
 import toastr from 'toastr';
+import SpelerAction from '../../actions/SpelerAction';
 
 import TextInput from '../common/textInput.js';
 
@@ -42,14 +43,10 @@ class InvoerenSpelersPage extends Component {
     bewaarSpelers = (event) => {
         event.preventDefault();
         if(this.spelerNamenGeldig()) { //TODO Aaron: spelers opslaan in store
-            // if(this.state.spelers.id) {
-            //     SpelerAction.spelerAanpassen(this.state.spelers);
-            // } else {
-            //     SpelerAction.spelerAanmaken(this.state.spelers);
-            // }
+            SpelerAction.createSpelers(this.state.spelers);
             toastr.success('spelers opgeslagen');
             this.setState({aangepast: false});
-            this.context.router.transitionTo('driezesnegen'); //TODO: routing fixen
+            this.context.router.transitionTo('driezesnegen');
         }
     };
 
@@ -66,12 +63,6 @@ class InvoerenSpelersPage extends Component {
 
         this.setState({errors: this.state.errors});
         return geldigeNamen;
-    }
-
-    componentWillMount() {
-        // this.setState({
-        //     spelers: spelersStore.getSpelers() //TODO: store
-        // });
     }
 
     render() {
