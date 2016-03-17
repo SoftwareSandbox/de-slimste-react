@@ -4,7 +4,7 @@ import SpelerRow from './spelerRow';
 class Spelers extends Component {
 
     static propTypes = {
-        spelers: React.PropTypes.object
+        spelers: React.PropTypes.array
     };
 
     constructor(props) {
@@ -18,10 +18,10 @@ class Spelers extends Component {
     }
 
     render() {
-        let className = 'spelers aantalSpelers' + this.props.spelers.spelers.length;
+        let className = 'spelers aantalSpelers' + this.props.spelers.length;
         return (
 			<div className={className}>
-                {this.props.spelers.spelers.map(this.createSpelerRow)}
+                {this.props.spelers.map(this.createSpelerRow)}
 			</div>
         );
     }
