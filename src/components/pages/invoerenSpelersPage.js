@@ -106,7 +106,7 @@ class InvoerenSpelersPage extends Component {
                         af={true}
                     />
 
-                    <input type="submit" value="Start de quiz" className="slimsteQuizConfiguratie" onClick={this.bewaarSpelers}/>
+                    <input type="button" value="Start de quiz" className="slimsteQuizConfiguratie" onClick={this.bewaarSpelers}/>
                 </form>
                 </div>
             );
