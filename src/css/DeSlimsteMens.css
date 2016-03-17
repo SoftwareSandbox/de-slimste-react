@@ -1,0 +1,375 @@
+a {
+	color: white;
+}
+
+body {
+    background-image: url("../images/background.jpg");
+    background-color: #eb0203;
+	background-repeat:no-repeat;
+	background-position:top center;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+body, .slimsteMensButton {
+	font-family: 'Francois One';
+	color: rgb(235, 221, 221);
+	text-shadow: rgb(3, 3, 3) 4px 4px 4px;
+	font-color: white;
+}
+
+.title {
+	width: 60%;
+	margin-left: 20%;
+}
+h1 {
+	text-align: center;
+	font-size: 60px;
+	
+}
+#vorigeRonde {
+	font-size: 60px;
+}
+#volgendeRonde {
+	font-size: 60px;
+}
+
+.spelers {
+	width: 100%;
+	position: absolute;
+	bottom: 30px;
+}
+#finaleSpelersSelecteren {
+	width: 100%;
+}
+#finaleSpelersSelecteren .speler, #finaleSpelersSelecteren .geselecteerdeSpeler {
+	margin: 0 auto;
+	margin-top: 2%;
+}
+.speler, .geselecteerdeSpeler {
+	text-align: center;
+	font-size: 32px;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	opacity: 0.7;
+    background-color: #a80203;
+	width: 28%;
+}
+.aantalSpelers2 div.speler:first-child, .aantalSpelers2 div.geselecteerdeSpeler:first-child {
+	float: left;
+	margin-left: 20%;
+}
+.aantalSpelers2 div.speler:last-child, .aantalSpelers2 div.geselecteerdeSpeler:last-child {
+	float: right;
+	margin-right: 20%;
+}
+
+.aantalSpelers3 .speler, .aantalSpelers3 .geselecteerdeSpeler {
+	float: left;
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+}
+
+.speler {
+	color: rgb(235, 221, 221);
+}
+
+.geselecteerdeSpeler , .selected{
+	color: #ffff66;
+}
+
+.drieZesNegenLijn1, .drieZesNegenLijn2, .drieZesNegenLijn3 {
+	text-align: center;
+	font-size: 64px;
+	height: 150px;
+}
+
+.drieZesNegenLijn1 {
+	width: 60%;
+	padding-left: 20%;
+}
+
+.drieZesNegenLijn2 {
+	width: 60%;
+	padding-left: 20%;
+}
+.drieZesNegenLijn3 {
+	width: 35%;
+	padding-left: 32.5%;
+}
+.drieZesNegen1, .drieZesNegen2, .drieZesNegen3 {
+	width: 100px;
+	padding: 40px;
+	float: left;
+}
+.drieZesNegen12{
+	margin-top: 80px;
+}
+.drieZesNegen22{
+	margin-top: 120px;
+}
+.drieZesNegen3{
+	//margin-top: 40px;
+	font-size: 80px;
+}
+
+.menu {
+	position: absolute;
+	left: 20px;
+	top: 20px;
+	opacity: 0.7;
+    background-color: #a80203;
+	padding: 1%;
+	font-size: 50px;
+}
+
+.menuHider {
+	position: absolute;
+	left: 2px;
+	top: 15px;
+}
+
+.menuitem {
+	opacity: 1;
+	padding: 5px;
+	color: white;
+}
+
+.menuitemdisabled {
+	opacity: 0.4;
+	padding: 5px;
+	color: white;
+}
+
+// galerij
+#deGalerij {
+}
+
+#galerijButtons {
+	padding-top: 2.5%;
+}
+
+img.galerijFoto {
+	display: block;
+	max-width: 1400px;
+	max-height: 875px;
+ 	margin:0 auto;
+}
+img.verticaleFoto {
+	height: 85%;
+}
+img.horizontaleFoto {
+	width: 85%;
+}
+.galerijButtons {
+	display: block;
+	width: 61%;
+	margin: 0 auto;
+}
+button.buttonLeft {
+	float: left;
+	margin-left: 17.5%;
+}
+button.buttonRight {
+	float: right;
+	margin-right: 17.5%;
+}
+button.slimsteMensButton {
+	padding-top: 1%;
+	padding-bottom: 1%;
+	width: 30%;
+	
+	text-align: center;
+	font-size: 32px;
+	opacity: 0.7;
+    background-color: #a80203;
+	margin-top: 2%;
+	margin-bottom: 1%;
+	border: 2px solid;
+    border-radius: 25px;
+}
+
+.slimsteQuizConfiguratie,.puzzelAntwoord,.finaleAntwoord,.finaleButton,
+.collectiefGeheugenAntwoord,.oorkondeButton,.galerijAntwoord{
+	margin: 0 auto;
+	color: white;
+	padding: 1%;
+	display: block;
+
+	text-align: center;
+	font-size: 32px;
+	opacity: 0.7;
+    background-color: #a80203;
+	margin-bottom: 1%;
+	border: 2px solid;
+    border-radius: 25px;
+}
+
+.galerijAntwoord.gevonden, .slimsteQuizConfiguratie.gevonden, .collectiefGeheugenAntwoord.gevonden, .finaleAntwoord.gevonden {
+	background-color: green;
+}
+
+.galerijAntwoord.huidige {
+	color: yellow;
+}
+
+.slimsteQuizConfiguratie,.puzzelAntwoord,.finaleAntwoord,.finaleButton,
+.collectiefGeheugenAntwoord,.oorkondeButton{
+	margin-top: 2%;
+}
+.galerijAntwoord{
+	margin-top: 1%;
+}
+
+.slimsteQuizConfiguratie {
+	width: 30%;
+}
+
+table.openDeur {
+	width: 60%;
+	margin: 0 auto;
+}
+
+table.openDeur img {
+	max-width: 300px;
+	max-height: 300px;
+}
+table.openDeur td {
+	text-align: center;
+	padding: 10px;
+}
+
+table.openDeur button {
+	font-size: 16px;
+	color: white;
+	padding: 5px 50px;
+	opacity: 0.7;
+    background-color: #a80203;
+	border: 2px solid;
+    border-radius: 25px;
+	margin: 0 auto;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	display: block;
+	text-align: center;
+}
+
+.onleesbaar {
+	text-shadow: 0px 0px 20px rgba(255,255,255,0.6), 0px 0px 60px rgba(255,255,255,0.4), 0px 0px 100px rgba(255,255,255,0.3), 0px 0px 360px rgba(255,255,255,0.3);
+	color: rgba(255,255,255,0);
+	font: 32px 'ChunkFiveRegular';
+}
+
+.puzzelTabel {
+	position: absolute;
+	display: block;
+	left: 10%;
+	top: 15%;
+	width: 60%;
+	height: 60%;
+}
+.puzzelCel, .puzzelTabel td {
+	width: 20%;
+	height: 20%;
+    background-color: #a80203;
+	opacity: 0.7;
+	font-size: 28px;
+	text-align: center;
+}
+.puzzelAntwoorden {
+	position: absolute;
+	display: block;
+	right: 2.5%;
+	top: 25%;
+	width: 30%;
+	height: 50%;
+}
+.puzzelAntwoord1 {
+	color: rgb(42, 142, 242);
+	opacity: 1;
+}
+.puzzelAntwoord2 {
+	color: rgb(250,20,138);
+	opacity: 1;
+}
+.puzzelAntwoord3 {
+	color: yellow;
+	opacity: 1;
+}
+.puzzelAntwoord {
+	width: 80%;
+}
+.collectiefGeheugenAntwoord {
+	width: 30%;
+	margin-top: 1%;
+}
+
+.finaleAntwoorden {
+	width: 80%;
+	display: block;
+}
+.finaleAntwoord {
+	margin-left: 25%;
+	width: 40%;
+	margin-top: 1%;
+}
+.finaleVraag, .uitlegFinale {
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	padding: 1% 3%;
+    background-color: #a80203;
+	opacity: 0.7;
+	font-size: 32px;
+}
+.finaleButton,.oorkondeButton {
+	width: 40%;
+}
+.galerijAntwoord {
+	width: 30%;
+}
+.galerijAntwoordLinks {
+	float: left;
+	margin-left: 15%;
+}
+.galerijAntwoordRechts {
+	float: right;
+	margin-right: 15%;
+}
+
+.finaleGebeurd {
+	margin-top: 10%;
+	margin: 0 auto;
+	font-size: 180px;
+	display: block;
+	text-align: center;
+}
+
+.oorkonde, .drieZesNegenParent {
+	margin-top: 10%;
+	margin: 0 auto;
+	font-size: 36px;
+	display: block;
+	width: 70%;
+}
+.uitlegOorkonde{
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	padding: 5% 5%;
+    background-color: #a80203;
+	opacity: 0.7;
+	font-size: 32px;
+}
+
+.deSlimsteMensTitel {
+	font-size: 50px;
+	text-align: center;
+}
+
+.naamWinnaar {
+	color: #ffff66;
+	font-weight: bold;
+}
