@@ -5,8 +5,7 @@ class CollectiefGeheugenPage extends Component {
     render() {
         return (
             <div>
-                <p>collectief geheugen</p>
-                <Navigator previous="galerij" titel="Collectief geheugen" next="finale"></Navigator>
+                <Navigator vorige="galerij" titel="Collectief geheugen" volgende="finale"></Navigator>
             </div>
         );
     }

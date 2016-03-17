@@ -5,8 +5,7 @@ class GalerijPage extends Component {
     render() {
         return (
             <div>
-                <p>galerij</p>
-                <Navigator previous="puzzel" titel="Galerij" next="collectiefgeheugen"></Navigator>
+                <Navigator vorige="puzzel" titel="Galerij" volgende="collectiefgeheugen"></Navigator>
             </div>
         );
     }

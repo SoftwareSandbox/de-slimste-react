@@ -4,9 +4,9 @@ import {Link} from 'react-router';
 class Navigator extends Component {
 
     static propTypes = {
-        previous: PropTypes.string,
-        titel: PropTypes.string,
-        next: PropTypes.string
+        vorige: PropTypes.string,
+        titel: PropTypes.string.required,
+        volgende: PropTypes.string
     };
 
     constructor(props) {
@@ -17,7 +17,9 @@ class Navigator extends Component {
         return (
             <div>
                 <p>
-                <Link to={this.props.previous}>Prev</Link> {this.props.titel} <Link to={this.props.next}>Next</Link>
+                    {this.props.vorige ? <Link to={this.props.vorige}>Vorige </Link> : null}
+                    {this.props.titel}
+                    {this.props.volgende ? <Link to={this.props.volgende}> Volgende</Link> : null }
                 </p>
             </div>
         );

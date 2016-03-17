@@ -5,8 +5,7 @@ class FinalePage extends Component {
     render() {
         return (
             <div>
-            <p>finale</p>
-                <Navigator previous="collectiefgeheugen" titel="Finale" next="finale"></Navigator>
+                <Navigator vorige="collectiefgeheugen" titel="Finale"></Navigator>
             </div>
         );
     }
