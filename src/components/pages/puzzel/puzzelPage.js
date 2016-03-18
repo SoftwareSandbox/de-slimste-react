@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Navigator from '../../common/navigator';
 import VragenStore from '../../../stores/vragenStore';
+import SpelersFooter from '../../common/spelersFooter';
 
 class PuzzelPage extends Component {
 
@@ -42,6 +43,7 @@ class PuzzelPage extends Component {
 						</div>
 					</div>
 				</div>
+				<SpelersFooter />
 			</div>
 			);
 	}

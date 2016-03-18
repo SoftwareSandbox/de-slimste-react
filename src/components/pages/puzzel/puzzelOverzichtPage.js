@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Navigator from '../../common/navigator';
 import {Navigation, Link} from 'react-router';
+import SpelersFooter from '../../common/spelersFooter';
 class PuzzelOverzichtPage extends Component {
 
 	constructor(props, context) {
@@ -16,6 +17,7 @@ class PuzzelOverzichtPage extends Component {
 				<Link classname="slimsteQuizConfiguratie" to="/puzzel/1"><input type="button" value="Puzzel 2" className="slimsteQuizConfiguratie"/></Link>
 				<Link classname="slimsteQuizConfiguratie" to="/puzzel/2"><input type="button" value="Puzzel 3" className="slimsteQuizConfiguratie"/></Link>
 				</div>
+				<SpelersFooter />
 			</div>
 			);
 	}
