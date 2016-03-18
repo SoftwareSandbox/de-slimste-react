@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Navigation, browserHistory} from 'react-router';
+import {Navigation, hashHistory} from 'react-router';
 import Toastr from 'toastr';
 import SpelerAction from '../../actions/spelerAction';
 import SpelerStore from '../../stores/spelerStore';
@@ -51,7 +51,7 @@ class InvoerenSpelersPage extends Component {
                 }));
                 Toastr.success('spelers opgeslagen');
                 // the router is now built on reactjs/history, and it is a first class API in the router for navigating
-                browserHistory.push('driezesnegen');
+                hashHistory.push('driezesnegen');
             }
         };
     }

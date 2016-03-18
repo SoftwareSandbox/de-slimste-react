@@ -2,6 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import Spelers from './spelers';
 import SpelerStore from '../../stores/spelerStore';
 import SpelerAction from '../../actions/spelerAction';
+import OpenQuizzerVenster from './openQuizzerVenster';
 
 class Menu extends Component {
 
@@ -34,6 +35,7 @@ class Menu extends Component {
         return (
             <div className="menu">
                 <div>
+                    <OpenQuizzerVenster />
                     {this.props.hasVorigeVraag ?
                         <span className="fa fa-chevron-circle-left menuitem" onClick={this.props.onVorigeVraag}></span> :
                         <span className="fa fa-chevron-circle-left menuitemdisabled"></span>

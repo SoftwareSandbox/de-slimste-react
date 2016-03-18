@@ -24,7 +24,7 @@ class DrieZesNegenPage extends Component {
     render() {
         return (
             <div>
-                <Navigator vorige={this.props.vorige} titel="3-6-9" volgende={this.props.volgende} />
+                <Navigator vorige="home" titel="3-6-9" volgende="opendeur" />
                 <Vraag vraag={this.props.vraag} />
                 <Menu
                     hasVolgendeVraag={this.props.hasVolgendeVraag}

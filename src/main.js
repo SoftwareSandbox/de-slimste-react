@@ -1,7 +1,7 @@
 import React from 'react';
 import routes from './routes';
 import { render } from 'react-dom';
-import {IndexRoute, NotFoundRoute, Redirect, Route, Router, browserHistory} from 'react-router';
+import {IndexRoute, NotFoundRoute, Redirect, Route, Router, hashHistory} from 'react-router';
 
 import App from './components/app';
 import Homepage from './components/app';
@@ -11,7 +11,7 @@ import NotFoundPage from './components/app';
 import ManageAuthorPage from './components/app';
 
 import InvoerenSpelersPage from './components/pages/invoerenSpelersPage';
-import DrieZesNegenPage from './components/pages/drieZesNegen/drieZesNegenController';
+import DrieZesNegenController from './components/pages/drieZesNegen/drieZesNegenController';
 import OpenDeurPage from './components/pages/openDeurPage';
 import PuzzelOverzichtPage from './components/pages/puzzel/puzzelOverzichtPage';
 import PuzzelPage from './components/pages/puzzel/puzzelPage';
@@ -23,12 +23,12 @@ import QuizzerStartPage from './components/pages/quizzer/quizzerStartPage';
 
 
 render((
-    <Router history={browserHistory}>
+    <Router history={hashHistory}>
         <Route path="/" component={App}>
             <IndexRoute component={InvoerenSpelersPage}/>
             <Route path="home" component={InvoerenSpelersPage}/>
             <Route path="quizzer" component={QuizzerStartPage} />
-            <Route path="driezesnegen" component={DrieZesNegenPage}/>
+            <Route path="driezesnegen" component={DrieZesNegenController}/>
             <Route path="opendeur" component={OpenDeurPage}/>
             <Route path="puzzelOverzicht" component={PuzzelOverzichtPage}/>
             <Route path="puzzel/:puzzelNummer" component={PuzzelPage}/>
