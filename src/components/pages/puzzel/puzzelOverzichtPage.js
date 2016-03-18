@@ -12,9 +12,9 @@ class PuzzelOverzichtPage extends Component {
 			<div>
 				<Navigator vorige="opendeur" titel="Puzzel" volgende="puzzel"></Navigator>
 				<div id="puzzelRonde_OverzichtPagina" className="">
-				<Link to="puzzel/0" >Puzzel 1</Link>
-				<Link to="puzzel/1" >Puzzel 2</Link>
-				<Link to="puzzel/2" >Puzzel 3</Link>
+				<Link classname="slimsteQuizConfiguratie" to="puzzel/0"><input type="button" value="Puzzel 1" className="slimsteQuizConfiguratie"/></Link>
+				<Link classname="slimsteQuizConfiguratie" to="puzzel/1"><input type="button" value="Puzzel 2" className="slimsteQuizConfiguratie"/></Link>
+				<Link classname="slimsteQuizConfiguratie" to="puzzel/2"><input type="button" value="Puzzel 3" className="slimsteQuizConfiguratie"/></Link>
 				</div>
 			</div>
 			);
