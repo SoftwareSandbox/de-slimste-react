@@ -7,19 +7,34 @@ class DrieZesNegenController extends Component {
     constructor(props, context) {
         super(props, context); //It's very important to pass context to super() so that the router will work
         this.state = {
-            vraag: VragenStore.getVraag("DRIE_ZES_NEGEN", 0)
+            vraag: VragenStore.getVraag("DRIE_ZES_NEGEN", 0),
+            hasVolgendeVraag: VragenStore.hasVolgendeVraag("DRIE_ZES_NEGEN", 0),
+            hasVorigeVraag: VragenStore.hasVorigeVraag("DRIE_ZES_NEGEN", 0)
         };
-        //this.volgendeVraag = this.volgendeVraag.bind(this);
     }
 
     volgendeVraag = (event) => {
         var volgendNummer = this.state.vraag.nummer + 1;
-        this.setState({vraag: VragenStore.getVraag("DRIE_ZES_NEGEN", volgendNummer)});
+        var volgendeVraag = VragenStore.getVraag("DRIE_ZES_NEGEN", volgendNummer);
+        var hasVolgendeVraag = VragenStore.hasVolgendeVraag("DRIE_ZES_NEGEN", volgendNummer);
+        var hasVorigeVraag = VragenStore.hasVorigeVraag("DRIE_ZES_NEGEN", volgendNummer);
+        this.setState({
+            vraag: volgendeVraag,
+            hasVolgendeVraag: hasVolgendeVraag,
+            hasVorigeVraag: hasVorigeVraag
+        });
     };
 
     vorigeVraag = (event) => {
         var vorigNummer = this.state.vraag.nummer - 1;
-        this.setState({vraag: VragenStore.getVraag("DRIE_ZES_NEGEN", vorigNummer)});
+        var vorigeVraag = VragenStore.getVraag("DRIE_ZES_NEGEN", vorigNummer);
+        var hasVolgendeVraag = VragenStore.hasVolgendeVraag("DRIE_ZES_NEGEN", vorigNummer);
+        var hasVorigeVraag = VragenStore.hasVorigeVraag("DRIE_ZES_NEGEN", vorigNummer);
+        this.setState({
+            vraag: vorigeVraag,
+            hasVolgendeVraag: hasVolgendeVraag,
+            hasVorigeVraag: hasVorigeVraag
+        });
     };
 
     render() {
@@ -29,6 +44,8 @@ class DrieZesNegenController extends Component {
                     vraag={this.state.vraag}
                     onVolgendeVraag={this.volgendeVraag}
                     onVorigeVraag={this.vorigeVraag}
+                    hasVolgendeVraag={this.state.hasVolgendeVraag}
+                    hasVorigeVraag={this.state.hasVorigeVraag}
                     vorige="home"
                     volgende="opendeur"
                 />

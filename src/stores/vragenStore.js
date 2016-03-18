@@ -3,7 +3,20 @@ import ActionTypes from '../constants/actionTypes';
 import {EventEmitter} from 'events';
 import _ from 'lodash';
 const CHANGE_EVENT = 'change';
-
+let _vragen = [
+    {
+        nummer: 0,
+        type: "DRIE_ZES_NEGEN",
+        vraag: "Wie ben ik?",
+        antwoord: "Spongebob!"
+    },
+    {
+        nummer: 1,
+        type: "DRIE_ZES_NEGEN",
+        vraag: "Wat doe ik van beroep?",
+        antwoord: "Hamburgers bakken!"
+    }
+];
 const VragenStore = Object.assign({}, EventEmitter.prototype, {
 
     addChangeListener: function(callback) {
@@ -19,19 +32,15 @@ const VragenStore = Object.assign({}, EventEmitter.prototype, {
     },
 
     getVraag: (type, nummer) => {
-        const vragen = [
-            {
-                nummer: 0,
-                vraag: "Wie ben ik?",
-                antwoord: "Spongebob!"
-            },
-            {
-                nummer: 1,
-                vraag: "Wat doe ik van beroep?",
-                antwoord: "Hamburgers bakken!"
-            }
-        ];
-        return vragen[nummer];
+        return _vragen[nummer];
+    },
+
+    hasVolgendeVraag: (type, nummer) => {
+      return _vragen[nummer + 1] !== undefined;
+    },
+
+    hasVorigeVraag: (type, nummer) => {
+        return _vragen[nummer - 1] !== undefined;
     }
 
     //TOEVOEGEN AAN PAGES DIE DE SPELERS NODIG HEBBEN: _onChange, componentWillMount, componentWillUnmount
