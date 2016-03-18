@@ -12,7 +12,8 @@ class Menu extends Component {
         onVolgendeVraag: React.PropTypes.func.isRequired,
         onVorigeVraag: React.PropTypes.func.isRequired,
         hasVolgendeVraag: React.PropTypes.bool.isRequired,
-        hasVorigVraag: React.PropTypes.bool.isRequired
+        hasVorigVraag: React.PropTypes.bool.isRequired,
+        onVolgendeSpeler: React.PropTypes.func.isRequired
     };
 
     render() {
@@ -38,7 +39,7 @@ class Menu extends Component {
                     <span className="fa fa-minus-circle menuitem'"></span>
                 </div>
                 <div>
-                    <span className="fa fa-user menuitem"></span>
+                    <span className="fa fa-user menuitem" onClick={this.props.onVolgendeSpeler}></span>
                     <span className="fa fa-link menuitem"></span>
                 </div>
             </div>
