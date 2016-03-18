@@ -23,7 +23,14 @@ const SpelerAction = {
                 }
             ]
         });
+    },
+
+    secondeMinder: function(index){
+        Dispatcher.dispatch({
+            actionType:ActionTypes.SECONDE_MINDER,
+            spelerIndex: index
+        })
     }
 };
 
-export default SpelerAction;
+export default SpelerAction; 
