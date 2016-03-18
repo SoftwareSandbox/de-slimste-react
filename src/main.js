@@ -1,7 +1,7 @@
 import React from 'react';
 import routes from './routes';
 import { render } from 'react-dom';
-import {DefaultRoute, NotFoundRoute, Redirect, Route, Router, browserHistory} from 'react-router';
+import {IndexRoute, NotFoundRoute, Redirect, Route, Router, browserHistory} from 'react-router';
 
 import App from './components/app';
 import Homepage from './components/app';
@@ -21,6 +21,7 @@ import FinalePage from './components/pages/finalePage';
 render((
     <Router history={browserHistory}>
         <Route name="app" path="/" handler={App}>
+            <IndexRoute component={InvoerenSpelersPage}/>
             <Route handler={InvoerenSpelersPage}/>
             <Route name="home" handler={InvoerenSpelersPage}/>
 
