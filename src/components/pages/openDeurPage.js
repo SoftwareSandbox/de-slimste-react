@@ -5,7 +5,7 @@ class OpenDeurPage extends Component {
     render() {
         return (
             <div>
-                <Navigator vorige="driezesnegen" titel="Open deur" volgende="puzzel"></Navigator>
+                <Navigator vorige="driezesnegen" titel="Open deur" volgende="puzzelOverzicht"></Navigator>
             </div>
         );
     }

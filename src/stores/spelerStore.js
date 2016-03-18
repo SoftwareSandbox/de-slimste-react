@@ -5,7 +5,6 @@ import {EventEmitter} from 'events';
 const CHANGE_EVENT = 'change';
 
 let _spelers = {spelers: []};
-let init = false;
 
 const SpelerStore = Object.assign({}, EventEmitter.prototype, {
 
@@ -23,30 +22,15 @@ const SpelerStore = Object.assign({}, EventEmitter.prototype, {
     },
 
     getSpelers: () => {
-        if(!init){
-            init = true;
-            _spelers.spelers = [{
-                naam: 'Jos',
-                score: 60,
-                key: 0
-            },
-            {
-                naam: 'Jef',
-                score: 60,
-                key: 1
-            },
-            {
-                naam: 'Gill',
-                score: 60,
-                key: 2
-            }
-            ];
-        }
         return _spelers.spelers;
     },
 
     secondeMinder: (index) => {
         _spelers.spelers[index].score = _spelers.spelers[index].score - 1;
+    }, 
+
+    updateTijd: (index, tijd) => {
+        _spelers.spelers[index].score = tijd;
     }
 });
 
@@ -56,8 +40,12 @@ Dispatcher.register((action) => {
             _spelers.spelers = action.spelers;
             SpelerStore.emitChange();
             break;
-        case ActionTypes.SECONDE_MINDER:
-            SpelerStore.secondeMinder(action.spelerIndex);
+        // case ActionTypes.SECONDE_MINDER:
+        //     SpelerStore.secondeMinder(action.spelerIndex);
+        //     SpelerStore.emitChange();
+        //     break;
+        case ActionTypes.UPDATE_TIJD:
+            SpelerStore.updateTijd(action.spelerIndex, action.tijd);
             SpelerStore.emitChange();
             break;
         default:
