@@ -20,22 +20,15 @@ import FinalePage from './components/pages/finalePage';
 
 render((
     <Router history={browserHistory}>
-        <Route name="app" path="/" handler={App}>
+        <Route path="/" component={App}>
             <IndexRoute component={InvoerenSpelersPage}/>
-            <Route handler={InvoerenSpelersPage}/>
-            <Route name="home" handler={InvoerenSpelersPage}/>
-
-
-            <Route name="driezesnegen" handler={DrieZesNegenPage}/>
-            <Route name="opendeur" handler={OpenDeurPage}/>
-            <Route name="puzzel" handler={PuzzelPage}/>
-            <Route name="galerij" handler={GalerijPage}/>
-            <Route name="collectiefgeheugen" handler={CollectiefGeheugenPage}/>
-            <Route name="finale" handler={FinalePage}/>
+            <Route path="home" component={InvoerenSpelersPage}/>
+            <Route path="driezesnegen" component={DrieZesNegenPage}/>
+            <Route path="opendeur" component={OpenDeurPage}/>
+            <Route path="puzzel" component={PuzzelPage}/>
+            <Route path="galerij" component={GalerijPage}/>
+            <Route path="collectiefgeheugen" component={CollectiefGeheugenPage}/>
+            <Route path="finale" component={FinalePage}/>
         </Route>
     </Router>
 ), document.getElementById('app'));
-//
-//Router.run(routes, (Handler) => {
-//    React.render(<Handler />, document.getElementById('app'));
-//});

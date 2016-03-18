@@ -1,25 +1,19 @@
 import React, {Component} from 'react';
-import {Navigation} from 'react-router';
-import toastr from 'toastr';
+import {Navigation, browserHistory} from 'react-router';
+import Toastr from 'toastr';
 import SpelerAction from '../../actions/SpelerAction';
 
 import TextInput from '../common/textInput.js';
 
 class InvoerenSpelersPage extends Component {
-    //We don't get mixins in es6!  Pull in the contextTypes static
-    //to get access to the router
-    static contextTypes = {
-        router: React.PropTypes.func.isRequired
-    };
 
-    constructor(props, context) {
-        super(props, context); //It's very important to pass context to super() so that the router will work
+    constructor(props) {
+        super(props);
         this.state = {
             spelers: ['', '', ''],
             aangepast: false
         };
     }
-
 
     static willTransitionFrom(transition, component) {
         if(component.state.aangepast && !confirm('De pagina verlaten zonder spelers op te slaan?')) {
@@ -44,9 +38,10 @@ class InvoerenSpelersPage extends Component {
         event.preventDefault();
         if(this.spelerNamenGeldig()) { //TODO Aaron: spelers opslaan in store
             SpelerAction.createSpelers(this.state.spelers);
-            toastr.success('spelers opgeslagen');
+            Toastr.success('spelers opgeslagen');
             this.setState({aangepast: false});
-            this.context.router.transitionTo('driezesnegen');
+            // the router is now built on reactjs/history, and it is a first class API in the router for navigating
+            browserHistory.push('driezesnegen');
         }
     };
 
@@ -67,40 +62,40 @@ class InvoerenSpelersPage extends Component {
 
     render() {
         return (
-                <div>
-                    <h1>Voer de namen van de spelers in!</h1>
-                    <form>
-                    <TextInput
-                        name="0"
-                        value={this.state.spelers[0]}
-                        onChange={this.setSpelersState}
-                        placeholder="Speler 1"
-                        error=''//{this.state.errors.speler1}
-                        af={true}
-                    />
+            <div>
+                <h1>Voer de namen van de spelers in!</h1>
+                <form>
+                <TextInput
+                    name="0"
+                    value={this.state.spelers[0]}
+                    onChange={this.setSpelersState}
+                    placeholder="Speler 1"
+                    error=''//{this.state.errors.speler1}
+                    af={true}
+                />
 
-                    <TextInput
-                        name="1"
-                        value={this.state.spelers[1]}
-                        onChange={this.setSpelersState}
-                        placeholder="Speler 2"
-                        error=''//{this.state.errors.speler2}
-                        af={true}
-                    />
+                <TextInput
+                    name="1"
+                    value={this.state.spelers[1]}
+                    onChange={this.setSpelersState}
+                    placeholder="Speler 2"
+                    error=''//{this.state.errors.speler2}
+                    af={true}
+                />
 
-                    <TextInput
-                        name="2"
-                        value={this.state.spelers[2]}
-                        onChange={this.setSpelersState}
-                        placeholder="Speler 3"
-                        error=''//{this.state.errors.speler3}
-                        af={true}
-                    />
+                <TextInput
+                    name="2"
+                    value={this.state.spelers[2]}
+                    onChange={this.setSpelersState}
+                    placeholder="Speler 3"
+                    error=''//{this.state.errors.speler3}
+                    af={true}
+                />
 
-                    <input type="button" value="Start de quiz" className="slimsteQuizConfiguratie" onClick={this.bewaarSpelers}/>
-                </form>
-                </div>
-            );
+                <input type="button" value="Start de quiz" className="slimsteQuizConfiguratie" onClick={this.bewaarSpelers}/>
+            </form>
+            </div>
+        );
     }
 }
 

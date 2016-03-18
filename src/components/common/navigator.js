@@ -11,9 +11,9 @@ class Navigator extends Component {
         return (
             <div className="title">
                 <h1>
-                    {this.props.vorige ? <Link to={this.props.vorige}><span id="vorigeRonde" className="fa fa-caret-left"></span></Link> : null}
+                    {this.props.vorige ? <Link to={ this.props.vorige }><span id="vorigeRonde" className="fa fa-caret-left"></span></Link> : null}
                     &nbsp;&nbsp;&nbsp;{this.props.titel}&nbsp;&nbsp;&nbsp;
-                    {this.props.volgende ? <Link to={this.props.volgende}><span id="volgendeRonde" className="fa fa-caret-right"></span></Link> : null }
+                    {this.props.volgende ? <Link to={ this.props.volgende }><span id="volgendeRonde" className="fa fa-caret-right"></span></Link> : null }
                 </h1>
             </div>
         );
