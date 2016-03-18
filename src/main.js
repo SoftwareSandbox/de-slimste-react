@@ -23,6 +23,7 @@ import QuizzerStartPage from './components/pages/quizzer/quizzerStartPage';
 
 
 render((
+    //<DrieZesNegenPage />
     <Router history={browserHistory}>
         <Route path="/" component={App}>
             <IndexRoute component={InvoerenSpelersPage}/>
