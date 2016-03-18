@@ -19,11 +19,15 @@ import GalerijPage from './components/pages/galerijPage';
 import CollectiefGeheugenPage from './components/pages/collectiefGeheugenPage';
 import FinalePage from './components/pages/finalePage';
 
+import QuizzerStartPage from './components/pages/quizzer/quizzerStartPage';
+
+
 render((
     <Router history={browserHistory}>
         <Route path="/" component={App}>
             <IndexRoute component={InvoerenSpelersPage}/>
             <Route path="home" component={InvoerenSpelersPage}/>
+            <Route path="quizzer" component={QuizzerStartPage} />
             <Route path="driezesnegen" component={DrieZesNegenPage}/>
             <Route path="opendeur" component={OpenDeurPage}/>
             <Route path="puzzelOverzicht" component={PuzzelOverzichtPage}/>
