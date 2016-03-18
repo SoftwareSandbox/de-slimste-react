@@ -31,6 +31,54 @@ const VragenStore = Object.assign({}, EventEmitter.prototype, {
         this.emit(CHANGE_EVENT);
     },
 
+    getPuzzel: (puzzelNummer) => {
+        const puzzels = [
+            [
+                {
+                    hints: ["Temptation island", "Jean-Paul Belmondo", "Playmate", "West-Vlaamse"],
+                    antwoord: "Barbara Gandolfini"
+                },
+                   {
+                    hints: ["Premier", "Benjamin", "Israel", "Likoed"],
+                    antwoord: "Netanyahu"
+                },
+                   {
+                    hints: ["Vastbinden", "Indianen", "Versieringen", "Boomstam"],
+                    antwoord: "Totempaal"
+                }
+            ],
+            [
+                {
+                    hints: ["Cassablanca", "Zweden", "Rosse linie", "Actrice"],
+                    antwoord: "Ingmar Bergman"
+                },
+                   {
+                    hints: ["Citroen", "Mexicaans", "zout", "Sunrise"],
+                    antwoord: "Tequilla"
+                },
+                   {
+                    hints: ["Worst", "Mosterd", "Zuurkool", "Ketchup"],
+                    antwoord: "Hot dog"
+                }
+            ],
+            [
+                {
+                    hints: ["Duet", "Mievis kopieert", "Relatiebemiddelaar", "Rika"],
+                    antwoord: "Ponnet"
+                },
+                   {
+                    hints: ["Letsel", "Nek", "Van voor naar achter", "Zweepslag"],
+                    antwoord: "Whiplash"
+                },
+                   {
+                    hints: ["Hello!", "Is it me", "You are looking for", "Zanger"],
+                    antwoord: "Lionel Ritchie"
+                }
+            ]
+        ];
+        return puzzels[puzzelNummer];
+    },
+
     getVraag: (type, nummer) => {
         return _vragen[nummer];
     },

@@ -31,19 +31,17 @@ class InvoerenSpelersPage extends Component {
         SpelerStore.removeChangeListener(this._onChange.bind(this));
     }
 
-    createSpelerUpdater(speler) {
+    createSpelerUpdateHandler(speler) {
         return (event) => {
             speler.naam = event.target.value;
-            this.setState({
-                spelerInputs: this.state.spelerInputs
-            });
+            this.setState({ spelerInputs: this.state.spelerInputs });
         };
     }
 
     createSubmitHandler() {
         return (event) => {
             event.preventDefault();
-            if(this.spelerNamenGeldig()) { 
+            if (this.spelerNamenGeldig()) { 
                 SpelerAction.createSpelers(this.state.spelerInputs.map((speler) => {
                     return {
                         key: speler.key,
@@ -59,13 +57,13 @@ class InvoerenSpelersPage extends Component {
     }
 
     spelerNamenGeldig() {
-        this.state.spelerInputs
-            .forEach((speler) => {
-                speler.error = !speler.name ? 'Geen lege naam toegestaan' : '';
+        let updatedSpelerInputs = this.state.spelerInputs
+            .map((speler) => {
+                speler.error = !speler.naam ? 'Geen lege naam toegestaan' : '';
+                return speler;
             });
-        return this.state.spelerInputs
-            .filter((speler) => speler.error)
-            .length > 1;
+        this.setState({ spelerInputs: updatedSpelerInputs });
+        return this.state.spelerInputs.filter((speler) => speler.error).length === 0;
     }
 
     render() {
@@ -76,12 +74,11 @@ class InvoerenSpelersPage extends Component {
                     {this.state.spelerInputs.map((speler) => {
                         return <TextInput
                             key={speler.key}
-                            name={speler.key}
                             value={speler.naam}
-                            onChange={this.createSpelerUpdater(speler)}
+                            onChange={this.createSpelerUpdateHandler(speler)}
                             placeholder={speler.placeholder}
                             error={speler.error}
-                            autoFocus={speler.key === 0}
+                            autoFocus={speler.key === "0"}
                         />;
                     })}
 

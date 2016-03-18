@@ -2,15 +2,6 @@ import React, {Component, PropTypes} from 'react';
 
 class TextInput extends Component {
 
-    static propTypes = {
-        name: PropTypes.string.isRequired,
-        onChange: PropTypes.func.isRequired,
-        placeholder: PropTypes.string,
-        value: PropTypes.string,
-        error: PropTypes.string,
-        autoFocus: PropTypes.bool
-    };
-
     constructor(props) {
         super(props);
     }
@@ -27,10 +18,8 @@ class TextInput extends Component {
                 <label htmlFor={this.props.name}>{this.props.label}</label>
                 <div className="field">
                     <input type="text"
-                            name={this.props.name}
                             className="slimsteQuizConfiguratie"
                             placeholder={this.props.error || this.props.placeholder}
-                            ref={this.props.name}
                             onChange={this.props.onChange}
                             value={this.props.value}
                             autoFocus={this.props.autoFocus ? "autoFocus" : false} 
@@ -40,6 +29,14 @@ class TextInput extends Component {
             );
     }
 }
+
+TextInput.propTypes = {
+    onChange: PropTypes.func.isRequired,
+    placeholder: PropTypes.string,
+    value: PropTypes.string,
+    error: PropTypes.string,
+    autoFocus: PropTypes.bool
+};
 
 export default TextInput;
 

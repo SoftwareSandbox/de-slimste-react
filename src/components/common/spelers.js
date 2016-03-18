@@ -14,10 +14,7 @@ class Spelers extends Component {
     }
 
     createSpelerRow = (speler) => {
-        if(this.props.timerGestart && speler.geselecteerd){
-            return (<SpelerRow speler={speler} timerGestart={true}/>);
-        }
-        return (<SpelerRow speler={speler} timerGestart={false}/>);
+        return (<SpelerRow key={speler.key} speler={speler} timerGestart={this.props.timerGestart && speler.geselecteerd}/>);
     };
 
     render() {
