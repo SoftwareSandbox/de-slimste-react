@@ -11,26 +11,37 @@ const SpelerAction = {
             spelers: [
                 {
                     naam: spelers[0],
-                    score: 60
+                    score: 60,
+                    key: 0
                 },
                 {
                     naam: spelers[1],
-                    score: 60
+                    score: 60,
+                    key: 1
                 },
                 {
                     naam: spelers[2],
-                    score: 60
+                    score: 60,
+                    key: 2
                 }
             ]
         });
     },
 
-    secondeMinder: function(index){
+    updateTijd: function(index, nieuweTijd){
         Dispatcher.dispatch({
-            actionType:ActionTypes.SECONDE_MINDER,
-            spelerIndex: index
-        })
+            actionType: ActionTypes.UPDATE_TIJD,
+            spelerIndex: index,
+            tijd: nieuweTijd
+        });
     }
+
+    // secondeMinder: function(index){
+    //     Dispatcher.dispatch({
+    //         actionType: ActionTypes.SECONDE_MINDER,
+    //         spelerIndex: index
+    //     });
+    // }
 };
 
 export default SpelerAction; 
