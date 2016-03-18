@@ -11,7 +11,7 @@ import NotFoundPage from './components/app';
 import ManageAuthorPage from './components/app';
 
 import InvoerenSpelersPage from './components/pages/invoerenSpelersPage';
-import DrieZesNegenPage from './components/pages/drieZesNegenPage';
+import DrieZesNegenPage from './components/pages/drieZesNegen/drieZesNegenController';
 import OpenDeurPage from './components/pages/openDeurPage';
 import PuzzelPage from './components/pages/puzzelPage';
 import GalerijPage from './components/pages/galerijPage';
