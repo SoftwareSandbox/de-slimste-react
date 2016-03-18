@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Navigator from '../common/navigator';
 import Spelers from '../common/spelers';
-import SpelerStore from '../../stores/SpelerStore';
+import SpelerStore from '../../stores/spelerStore';
 
 class DrieZesNegenPage extends Component {
 
