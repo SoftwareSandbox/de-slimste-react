@@ -4,7 +4,7 @@ import {EventEmitter} from 'events';
 
 const CHANGE_EVENT = 'change';
 
-let _spelers = {spelers: []};
+let _spelers = {spelers: [], geselecteerdeSpelerIndex: 0};
 
 const SpelerStore = Object.assign({}, EventEmitter.prototype, {
 
@@ -31,13 +31,22 @@ const SpelerStore = Object.assign({}, EventEmitter.prototype, {
 
     updateTijd: (index, tijd) => {
         _spelers.spelers[index].score = tijd;
+    },
+
+    selecteerSpeler: (index) => {
+        _spelers.spelers[_spelers.geselecteerdeSpelerIndex].geselecteerd = false;
+        _spelers.geselecteerdeSpelerIndex = index;
+        _spelers.spelers[_spelers.geselecteerdeSpelerIndex].geselecteerd = true;
     }
 });
 
 Dispatcher.register((action) => {
+
+
     switch(action.actionType) {
         case ActionTypes.MAAK_SPELERS:
             _spelers.spelers = action.spelers;
+            SpelerStore.selecteerSpeler(0);
             SpelerStore.emitChange();
             break;
         // case ActionTypes.SECONDE_MINDER:
@@ -46,6 +55,10 @@ Dispatcher.register((action) => {
         //     break;
         case ActionTypes.UPDATE_TIJD:
             SpelerStore.updateTijd(action.spelerIndex, action.tijd);
+            SpelerStore.emitChange();
+            break;
+        case ActionTypes.VOLGENDE_SPELER:
+            SpelerStore.selecteerSpeler((_spelers.geselecteerdeSpelerIndex + 1) % _spelers.spelers.length);
             SpelerStore.emitChange();
             break;
         default:

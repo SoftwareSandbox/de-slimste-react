@@ -18,6 +18,12 @@ const SpelerAction = {
             spelerIndex: index,
             tijd: nieuweTijd
         });
+    },
+
+    volgendeSpeler: function(){
+        Dispatcher.dispatch({
+            actionType: ActionTypes.VOLGENDE_SPELER
+        });
     }
 };
 
