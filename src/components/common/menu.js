@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import Spelers from './spelers';
 import SpelerStore from '../../stores/spelerStore';
+import SpelerAction from '../../actions/spelerAction';
 
 class Menu extends Component {
 
@@ -14,6 +15,10 @@ class Menu extends Component {
         hasVolgendeVraag: React.PropTypes.bool.isRequired,
         hasVorigVraag: React.PropTypes.bool.isRequired,
         onVolgendeSpeler: React.PropTypes.func.isRequired
+    };
+
+    volgendeSpeler = (event) => {
+        SpelerAction.volgendeSpeler();
     };
 
     render() {
@@ -39,7 +44,7 @@ class Menu extends Component {
                     <span className="fa fa-minus-circle menuitem'"></span>
                 </div>
                 <div>
-                    <span className="fa fa-user menuitem" onClick={this.props.onVolgendeSpeler}></span>
+                    <span className="fa fa-user menuitem" onClick={this.volgendeSpeler}></span>
                     <span className="fa fa-link menuitem"></span>
                 </div>
             </div>

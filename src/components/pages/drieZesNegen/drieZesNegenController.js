@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import DrieZesNegen from './drieZesNegenPage';
 import VragenStore from '../../../stores/vragenStore';
-import SpelerAction from '../../../actions/spelerAction';
 
 class DrieZesNegenController extends Component {
 
@@ -38,10 +37,6 @@ class DrieZesNegenController extends Component {
         });
     };
 
-    volgendeSpeler = (event) => {
-        SpelerAction.volgendeSpeler();
-    };
-
     render() {
         return (
             <div>
@@ -51,7 +46,6 @@ class DrieZesNegenController extends Component {
                     onVorigeVraag={this.vorigeVraag}
                     hasVolgendeVraag={this.state.hasVolgendeVraag}
                     hasVorigeVraag={this.state.hasVorigeVraag}
-                    onVolgendeSpeler={this.volgendeSpeler}
                     vorige="home"
                     volgende="opendeur"
                 />
