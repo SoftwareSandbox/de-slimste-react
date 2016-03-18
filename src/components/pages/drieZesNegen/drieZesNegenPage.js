@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Navigator from '../../common/navigator';
-import Spelers from '../../common/spelers';
+import SpelersFooter from '../../common/spelersFooter';
 import Vraag from './drieZesNegenVraag';
 
 class DrieZesNegenPage extends Component {
@@ -10,7 +10,6 @@ class DrieZesNegenPage extends Component {
     }
 
     static propTypes = {
-        spelers: React.PropTypes.array.isRequired,
         vraag: React.PropTypes.object.isRequired,
         onVolgendeVraag: React.PropTypes.func.isRequired,
         onVorigeVraag: React.PropTypes.func.isRequired,
@@ -25,7 +24,7 @@ class DrieZesNegenPage extends Component {
                 <Vraag vraag={this.props.vraag} />
                 <button onClick={this.props.onVorigeVraag}> Vorige </button>
                 <button onClick={this.props.onVolgendeVraag}> Volgende </button>
-                <Spelers spelers={this.props.spelers}/>
+                <SpelersFooter />
             </div>
         );
     }
