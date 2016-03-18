@@ -16,18 +16,6 @@ class InvoerenSpelersPage extends Component {
         };
     }
 
-    _onChange() {
-        this.setState({spelers: SpelerStore.getSpelers()});
-    }
-
-    componentWillMount() {
-        SpelerStore.addChangeListener(this._onChange.bind(this));
-    }
-
-    componentWillUnmount() {
-        SpelerStore.removeChangeListener(this._onChange.bind(this));
-    }
-
     static willTransitionFrom(transition, component) {
         if(component.state.aangepast && !confirm('De pagina verlaten zonder spelers op te slaan?')) {
             transition.abort();

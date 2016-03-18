@@ -56,7 +56,6 @@ Dispatcher.register((action) => {
     switch(action.actionType) {
         case ActionTypes.MAAK_SPELERS:
             _spelers.spelers = action.spelers;
-            console.log(_spelers[0]);
             SpelerStore.emitChange();
             break;
         // case ActionTypes.SECONDE_MINDER:
