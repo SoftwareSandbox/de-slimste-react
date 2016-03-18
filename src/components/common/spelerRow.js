@@ -5,21 +5,13 @@ import SpelerAction from '../../actions/spelerAction';
 class SpelerRow extends Component {
 
     static propTypes = {
-        speler: React.PropTypes.object.isRequired
+        speler: React.PropTypes.object.isRequired,
+        timerGestart: React.PropTypes.bool
     };
 
     constructor(props) {
         super(props);
-        this.state = {
-            stop: true
-            // tijd: this.props.speler.score * 1000
-        };
     }
-
-    onClick = (event) => {
-        this.state.stop = !this.state.stop;
-        this.setState({stop: this.state.stop});
-    };
 
     updateTijd = (tijdInMillis) => {
         if (this.props.speler.score * 1000 - tijdInMillis >= 10) {
@@ -37,16 +29,14 @@ class SpelerRow extends Component {
             <div className={className}>
                 <div className="name">{this.props.speler.naam}</div>
                 <div className="score">
-                    { !this.state.stop ? 
+                    { this.props.timerGestart ? 
                         <Timer 
                             initialTimeRemaining={this.props.speler.score * 1000} 
                             formatFunc={this.formatTime}
                             tickCallback={this.updateTijd}/> 
-                        : 
-                        this.formatTime(this.props.speler.score * 1000)
+                        : this.formatTime(this.props.speler.score * 1000)
                     }
                 </div>
-                <button onClick={this.onClick}> {this.state.stop ? "START" : "STOP"} </button>
             </div>
         );
     }

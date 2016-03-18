@@ -7,12 +7,18 @@ class SpelersFooter extends Component {
     constructor(props, context) {
         super(props, context); //It's very important to pass context to super() so that the router will work
         this.state = {
-            spelers: SpelerStore.getSpelers()
+            spelers: SpelerStore.getSpelers(),
+            timerGestart: SpelerStore.getTimerGestart()
         };
     }
 
     _onChange() {
-        this.setState({spelers: SpelerStore.getSpelers()});
+        console.log(SpelerStore.getTimerGestart());
+        this.state = {
+                spelers: SpelerStore.getSpelers(),
+                timerGestart: SpelerStore.getTimerGestart()
+            };
+        this.setState(this.state);
     }
 
     componentWillMount() {
@@ -25,7 +31,10 @@ class SpelersFooter extends Component {
 
     render() {
         return (
-			<Spelers spelers={this.state.spelers} />
+			<Spelers 
+                spelers={this.state.spelers}
+                timerGestart={this.state.timerGestart}
+            />
         );
     }
 }

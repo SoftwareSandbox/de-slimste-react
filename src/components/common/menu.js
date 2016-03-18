@@ -21,6 +21,14 @@ class Menu extends Component {
         SpelerAction.volgendeSpeler();
     };
 
+    startTimer = () => {
+        SpelerAction.startTimer();
+    };
+
+    stopTimer = () => {
+        SpelerAction.stopTimer();
+    };
+
     render() {
         return (
             <div className="menu">
@@ -35,8 +43,8 @@ class Menu extends Component {
                     }
                 </div>
                 <div>
-                    <span className="fa fa-play menuitem"></span>
-                    <span className="fa fa-stop menuitem"></span>
+                    <span className="fa fa-play menuitem" onClick={this.startTimer}></span>
+                    <span className="fa fa-stop menuitem" onClick={this.stopTimer}></span>
                     <span className="fa fa-check menuitem"></span>
                 </div>
                 <div>

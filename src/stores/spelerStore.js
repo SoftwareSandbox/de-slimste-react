@@ -37,6 +37,18 @@ const SpelerStore = Object.assign({}, EventEmitter.prototype, {
         _spelers.spelers[_spelers.geselecteerdeSpelerIndex].geselecteerd = false;
         _spelers.geselecteerdeSpelerIndex = index;
         _spelers.spelers[_spelers.geselecteerdeSpelerIndex].geselecteerd = true;
+    },
+
+    getTimerGestart: () => {
+        return _spelers.timer;
+    },
+
+    startTimer: () => {
+        _spelers.timer = true;
+    },
+
+    stopTimer: () => {
+        _spelers.timer = false;
     }
 });
 
@@ -59,6 +71,14 @@ Dispatcher.register((action) => {
             break;
         case ActionTypes.VOLGENDE_SPELER:
             SpelerStore.selecteerSpeler((_spelers.geselecteerdeSpelerIndex + 1) % _spelers.spelers.length);
+            SpelerStore.emitChange();
+            break;
+        case ActionTypes.START_TIMER:
+            SpelerStore.startTimer();
+            SpelerStore.emitChange();
+            break;
+        case ActionTypes.STOP_TIMER:
+            SpelerStore.stopTimer();
             SpelerStore.emitChange();
             break;
         default:

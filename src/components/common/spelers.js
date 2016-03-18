@@ -4,18 +4,21 @@ import SpelerRow from './spelerRow';
 class Spelers extends Component {
 
     static propTypes = {
-        spelers: React.PropTypes.array
+        spelers: React.PropTypes.array,
+        geselecteerdeSpeler: React.PropTypes.number,
+        timerGestart: React.PropTypes.bool
     };
 
     constructor(props) {
         super(props);
     }
 
-    createSpelerRow(speler) {
-        return (
-            <SpelerRow speler={speler} />
-        );
-    }
+    createSpelerRow = (speler) => {
+        if(this.props.timerGestart && speler.geselecteerd){
+            return (<SpelerRow speler={speler} timerGestart={true}/>);
+        }
+        return (<SpelerRow speler={speler} timerGestart={false}/>);
+    };
 
     render() {
         let className = 'spelers aantalSpelers' + this.props.spelers.length;

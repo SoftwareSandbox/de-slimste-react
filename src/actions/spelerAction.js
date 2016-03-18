@@ -24,6 +24,18 @@ const SpelerAction = {
         Dispatcher.dispatch({
             actionType: ActionTypes.VOLGENDE_SPELER
         });
+    },
+
+    startTimer: function(){
+        Dispatcher.dispatch({
+            actionType: ActionTypes.START_TIMER
+        });
+    },
+
+    stopTimer: function(){
+        Dispatcher.dispatch({
+            actionType: ActionTypes.STOP_TIMER
+        });
     }
 };
 
