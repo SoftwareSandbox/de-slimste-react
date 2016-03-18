@@ -13,6 +13,7 @@ class DrieZesNegenPage extends Component {
         spelers: React.PropTypes.array.isRequired,
         vraag: React.PropTypes.object.isRequired,
         onVolgendeVraag: React.PropTypes.func.isRequired,
+        onVorigeVraag: React.PropTypes.func.isRequired,
         vorige: React.PropTypes.string,
         volgende: React.PropTypes.string
     };
@@ -22,7 +23,8 @@ class DrieZesNegenPage extends Component {
             <div>
                 <Navigator vorige={this.props.vorige} titel="3-6-9" volgende={this.props.volgende} />
                 <Vraag vraag={this.props.vraag} />
-                <button onClick={this.props.onVolgendeVraag.bind(this)}> Volgende </button>
+                <button onClick={this.props.onVorigeVraag}> Vorige </button>
+                <button onClick={this.props.onVolgendeVraag}> Volgende </button>
                 <Spelers spelers={this.props.spelers}/>
             </div>
         );

@@ -21,12 +21,12 @@ const VragenStore = Object.assign({}, EventEmitter.prototype, {
     getVraag: (type, nummer) => {
         const vragen = [
             {
-                nummer: 1,
+                nummer: 0,
                 vraag: "Wie ben ik?",
                 antwoord: "Spongebob!"
             },
             {
-                nummer: 2,
+                nummer: 1,
                 vraag: "Wat doe ik van beroep?",
                 antwoord: "Hamburgers bakken!"
             }

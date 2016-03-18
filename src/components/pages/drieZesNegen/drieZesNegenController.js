@@ -11,6 +11,7 @@ class DrieZesNegenController extends Component {
             spelers: SpelerStore.getSpelers(),
             vraag: VragenStore.getVraag("DRIE_ZES_NEGEN", 0)
         };
+        //this.volgendeVraag = this.volgendeVraag.bind(this);
     }
 
     _onChange() {
@@ -29,13 +30,27 @@ class DrieZesNegenController extends Component {
     }
 
     volgendeVraag = (event) => {
-        //this.setState({vraag: VragenStore.getVraag("DRIE_ZES_NEGEN", this.props.vraag.nummer + 1)});
+        debugger;
+        var volgendNummer = this.state.vraag.nummer + 1;
+        this.setState({vraag: VragenStore.getVraag("DRIE_ZES_NEGEN", volgendNummer)});
+    };
+
+    vorigeVraag = (event) => {
+        var vorigNummer = this.state.vraag.nummer - 1;
+        this.setState({vraag: VragenStore.getVraag("DRIE_ZES_NEGEN", vorigNummer)});
     };
 
     render() {
         return (
             <div>
-                <DrieZesNegen spelers={this.state.spelers} vraag={this.state.vraag} vorige="home" volgende="opendeur" onVolgendeVraag={this.volgendeVraag}/>
+                <DrieZesNegen
+                    spelers={this.state.spelers}
+                    vraag={this.state.vraag}
+                    onVolgendeVraag={this.volgendeVraag}
+                    onVorigeVraag={this.vorigeVraag}
+                    vorige="home"
+                    volgende="opendeur"
+                />
             </div>
         );
     }
