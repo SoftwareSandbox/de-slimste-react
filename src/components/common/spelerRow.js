@@ -18,21 +18,16 @@ class SpelerRow extends Component {
 
     onClick = (event) => {
         this.state.stop = !this.state.stop;
-        this.setState({stop: this.state.stop});
         if(this.state.stop){
             SpelerAction.updateTijd(this.props.speler.key, this.state.tijd / 1000);
         }
+        this.setState({stop: this.state.stop});
     };
 
     updateTijd = (tijdInMillis) => {
-        if (this.state.tijd - tijdInMillis > 100) {
+        if (this.state.tijd - tijdInMillis >= 1000) {
             this.setState({tijd: tijdInMillis});
         }
-
-        // console.log(this.props.speler.score);
-        // if (this.props.speler.score - tijdInMillis/1000 > 1) {
-        //     SpelerAction.updateTijd(this.props.speler.key);
-        // }
     }
 
     formatTime = (timeremaining) => {
@@ -46,9 +41,9 @@ class SpelerRow extends Component {
 
     // };
 
-    addSeconds = () => {
-        this.setState({tijd: this.state.tijd + (1000 * 10)});
-    };
+    // addSeconds = () => {
+    //     this.setState({tijd: this.state.tijd + (1000 * 10)});
+    // };
 
 
 
@@ -59,9 +54,9 @@ class SpelerRow extends Component {
                 <div className="name">{this.props.speler.naam}</div>
                 <div className="score">
                     { !this.state.stop ? 
-                    <Timer initialTimeRemaining={this.props.speler.score * 1000} 
+                    <Timer initialTimeRemaining={this.state.tijd} 
                     formatFunc={this.formatTime}
-                    tickCallback={this.updateTijd}/> : "read only " + this.props.speler.score
+                    tickCallback={this.updateTijd}/> : "read only " + this.formatTime(this.state.tijd)
                     }
                 </div>
             <button onClick={this.onClick}> {this.state.stop ? "START" : "STOP"} </button>
