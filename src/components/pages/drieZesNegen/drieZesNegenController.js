@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import DrieZesNegen from './drieZesNegenPage';
 import VragenStore from '../../../stores/vragenStore';
+import SpelerAction from '../../../actions/spelerAction';
 
 class DrieZesNegenController extends Component {
 
@@ -37,6 +38,16 @@ class DrieZesNegenController extends Component {
         });
     };
 
+    vraagJuist = (event) => {
+        var isDrieZesOfNegen = ((this.state.vraag.nummer + 1) % 3) === 0;
+        if(isDrieZesOfNegen){
+            SpelerAction.addScoreHuidigeSpeler(10);
+        }
+        if(this.state.hasVolgendeVraag){
+            this.volgendeVraag(event);
+        }
+    };
+
     render() {
         return (
             <div>
@@ -46,6 +57,7 @@ class DrieZesNegenController extends Component {
                     onVorigeVraag={this.vorigeVraag}
                     hasVolgendeVraag={this.state.hasVolgendeVraag}
                     hasVorigeVraag={this.state.hasVorigeVraag}
+                    onVraagJuist={this.vraagJuist}
                     vorige="home"
                     volgende="opendeur"
                 />

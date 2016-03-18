@@ -20,6 +20,13 @@ const SpelerAction = {
         });
     },
 
+    addScoreHuidigeSpeler: function(score){
+        Dispatcher.dispatch({
+            actionType: ActionTypes.ADD_SCORE_HUIDIGE_SPELER,
+            score: score
+        });
+    },
+
     volgendeSpeler: function(){
         Dispatcher.dispatch({
             actionType: ActionTypes.VOLGENDE_SPELER

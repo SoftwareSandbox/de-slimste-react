@@ -15,6 +15,18 @@ let _vragen = [
         type: "DRIE_ZES_NEGEN",
         vraag: "Wat doe ik van beroep?",
         antwoord: "Hamburgers bakken!"
+    },
+    {
+        nummer: 2,
+        type: "DRIE_ZES_NEGEN",
+        vraag: "Is deze vraag punten waard?",
+        antwoord: "Ja!"
+    },
+    {
+        nummer: 3,
+        type: "DRIE_ZES_NEGEN",
+        vraag: "Wie is er niet op de hackaton?",
+        antwoord: "Uw mama"
     }
 ];
 const VragenStore = Object.assign({}, EventEmitter.prototype, {
