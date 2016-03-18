@@ -13,7 +13,7 @@ class Spelers extends Component {
 
     createSpelerRow(speler) {
         return (
-            <SpelerRow speler={speler} />
+            <SpelerRow key={speler.key} speler={speler} />
         );
     }
 
