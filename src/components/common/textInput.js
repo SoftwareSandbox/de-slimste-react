@@ -2,14 +2,6 @@ import React, {Component, PropTypes} from 'react';
 
 class TextInput extends Component {
 
-    static propTypes = {
-        onChange: PropTypes.func.isRequired,
-        placeholder: PropTypes.string,
-        value: PropTypes.string,
-        error: PropTypes.string,
-        autoFocus: PropTypes.bool
-    };
-
     constructor(props) {
         super(props);
     }
@@ -37,6 +29,14 @@ class TextInput extends Component {
             );
     }
 }
+
+TextInput.propTypes = {
+    onChange: PropTypes.func.isRequired,
+    placeholder: PropTypes.string,
+    value: PropTypes.string,
+    error: PropTypes.string,
+    autoFocus: PropTypes.bool
+};
 
 export default TextInput;
 
