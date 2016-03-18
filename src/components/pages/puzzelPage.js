@@ -4,7 +4,7 @@ class PuzzelPage extends Component {
 	render() {
 		return (
 			<div>
-				<Navigator vorige="opendeur" titel="Puzzel" volgende="galerij"></Navigator>
+				<Navigator vorige="puzzelOverzicht" titel="Puzzel" volgende="galerij"></Navigator>
 				<div id="puzzelRonde" className="">
 					<div>
 						<div className="">
