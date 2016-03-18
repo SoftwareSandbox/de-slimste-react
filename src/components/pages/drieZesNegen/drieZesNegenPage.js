@@ -16,6 +16,7 @@ class DrieZesNegenPage extends Component {
         onVorigeVraag: React.PropTypes.func.isRequired,
         hasVorigeVraag: React.PropTypes.bool.isRequired,
         hasVolgendeVraag: React.PropTypes.bool.isRequired,
+        onVraagJuist: React.PropTypes.func,
         vorige: React.PropTypes.string,
         volgende: React.PropTypes.string
     };
@@ -30,6 +31,7 @@ class DrieZesNegenPage extends Component {
                     hasVorigeVraag={this.props.hasVorigeVraag}
                     onVolgendeVraag={this.props.onVolgendeVraag}
                     onVorigeVraag={this.props.onVorigeVraag}
+                    onVraagJuist={this.props.onVraagJuist}
                 />
                 <SpelersFooter />
             </div>

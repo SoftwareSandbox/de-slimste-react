@@ -33,6 +33,11 @@ const SpelerStore = Object.assign({}, EventEmitter.prototype, {
         _spelers.spelers[index].score = tijd;
     },
 
+    addScoreHuidigeSpeler: (score) => {
+        var huidigeSpeler = _spelers.spelers[_spelers.geselecteerdeSpelerIndex];
+        huidigeSpeler.score = huidigeSpeler.score + score;
+    },
+
     selecteerSpeler: (index) => {
         _spelers.spelers[_spelers.geselecteerdeSpelerIndex].geselecteerd = false;
         _spelers.geselecteerdeSpelerIndex = index;
@@ -67,6 +72,10 @@ Dispatcher.register((action) => {
         //     break;
         case ActionTypes.UPDATE_TIJD:
             SpelerStore.updateTijd(action.spelerIndex, action.tijd);
+            SpelerStore.emitChange();
+            break;
+        case ActionTypes.ADD_SCORE_HUIDIGE_SPELER:
+            SpelerStore.addScoreHuidigeSpeler(action.score);
             SpelerStore.emitChange();
             break;
         case ActionTypes.VOLGENDE_SPELER:

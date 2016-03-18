@@ -14,7 +14,7 @@ class Vraag extends Component {
     render() {
         return (
             <div id="drieZesNegenRonde" className="drieZesNegenParent">
-                <h2 className="ng-binding">Huidige vraag: {this.props.vraag.nummer}</h2>
+                <h2 className="ng-binding">Huidige vraag: {this.props.vraag.nummer + 1}</h2>
                 <p className="ng-binding">{this.props.vraag.vraag}</p>
                 <h2>Antwoord:</h2>
                 <p className="ng-binding">{this.props.vraag.antwoord}</p>
