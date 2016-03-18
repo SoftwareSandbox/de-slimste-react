@@ -4,23 +4,22 @@ import SpelerAction from '../../actions/spelerAction';
 
 class SpelerRow extends Component {
 
-    static propTypes = {
-        speler: React.PropTypes.object.isRequired,
-        timerGestart: React.PropTypes.bool
-    };
-
     constructor(props) {
         super(props);
     }
 
-    updateTijd = (tijdInMillis) => {
-        if (this.props.speler.score * 1000 - tijdInMillis >= 10) {
-            SpelerAction.updateTijd(this.props.speler.key, tijdInMillis / 1000);
-        }
+    updateTijd() {
+        return (tijdInMillis) => {
+            if (this.props.speler.score * 1000 - tijdInMillis >= 10) {
+                SpelerAction.updateTijd(this.props.speler.key, tijdInMillis / 1000);
+            }
+        };
     }
 
-    formatTime = (timeremaining) => {
-        return Math.floor(timeremaining / 1000);
+    formatTime() {
+        return (timeremaining) => {
+            return Math.floor(timeremaining / 1000);
+        };
     };
 
     render() {
@@ -32,16 +31,19 @@ class SpelerRow extends Component {
                     { this.props.timerGestart ? 
                         <Timer 
                             initialTimeRemaining={this.props.speler.score * 1000} 
-                            formatFunc={this.formatTime}
-                            tickCallback={this.updateTijd}/> 
-                        : this.formatTime(this.props.speler.score * 1000)
+                            formatFunc={this.formatTime()}
+                            tickCallback={this.updateTijd()}/> 
+                        : this.formatTime()(this.props.speler.score * 1000)
                     }
                 </div>
             </div>
         );
     }
-
-    
 }
+
+SpelerRow.propTypes = {
+    speler: React.PropTypes.object.isRequired,
+    timerGestart: React.PropTypes.bool
+};
 
 export default SpelerRow;
