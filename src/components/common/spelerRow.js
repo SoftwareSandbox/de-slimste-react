@@ -11,41 +11,25 @@ class SpelerRow extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            stop: true,
-            tijd: this.props.speler.score * 1000
+            stop: true
+            // tijd: this.props.speler.score * 1000
         };
     }
 
     onClick = (event) => {
         this.state.stop = !this.state.stop;
-        if(this.state.stop){
-            SpelerAction.updateTijd(this.props.speler.key, this.state.tijd / 1000);
-        }
         this.setState({stop: this.state.stop});
     };
 
     updateTijd = (tijdInMillis) => {
-        if (this.state.tijd - tijdInMillis >= 1000) {
-            this.setState({tijd: tijdInMillis});
+        if (this.props.speler.score * 1000 - tijdInMillis >= 10) {
+            SpelerAction.updateTijd(this.props.speler.key, tijdInMillis / 1000);
         }
     }
 
     formatTime = (timeremaining) => {
         return Math.floor(timeremaining / 1000);
     };
-
-    // updateTijd = (tijdInMillis) => {
-    //     if (this.state.score - tijdInMillis > 100) {
-    //         this.setState({score: tijdInMillis});
-    //     }
-
-    // };
-
-    // addSeconds = () => {
-    //     this.setState({tijd: this.state.tijd + (1000 * 10)});
-    // };
-
-
 
     render() {
         let className = this.props.speler.geselecteerd ? 'geselecteerdeSpeler' : 'speler';
@@ -54,12 +38,15 @@ class SpelerRow extends Component {
                 <div className="name">{this.props.speler.naam}</div>
                 <div className="score">
                     { !this.state.stop ? 
-                    <Timer initialTimeRemaining={this.state.tijd} 
-                    formatFunc={this.formatTime}
-                    tickCallback={this.updateTijd}/> : "read only " + this.formatTime(this.state.tijd)
+                        <Timer 
+                            initialTimeRemaining={this.props.speler.score * 1000} 
+                            formatFunc={this.formatTime}
+                            tickCallback={this.updateTijd}/> 
+                        : 
+                        this.formatTime(this.props.speler.score * 1000)
                     }
                 </div>
-            <button onClick={this.onClick}> {this.state.stop ? "START" : "STOP"} </button>
+                <button onClick={this.onClick}> {this.state.stop ? "START" : "STOP"} </button>
             </div>
         );
     }
