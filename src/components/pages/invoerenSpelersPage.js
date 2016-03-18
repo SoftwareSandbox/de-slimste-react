@@ -11,8 +11,11 @@ class InvoerenSpelersPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            spelers: [],
-            errors: []
+            spelers: [
+                {key: "0", naam: '', placeholder: 'Speler 1', error: ''},
+                {key: "1", naam: '', placeholder: 'Speler 2', error: ''},
+                {key: "2", naam: '', placeholder: 'Speler 3', error: ''}
+            ]
         };
     }
 
@@ -28,18 +31,18 @@ class InvoerenSpelersPage extends Component {
         SpelerStore.removeChangeListener(this._onChange.bind(this));
     }
 
-    static willTransitionFrom(transition, component) {
-        if(component.state.aangepast && !confirm('De pagina verlaten zonder spelers op te slaan?')) {
-            transition.abort();
-        }
-    }
-
-    setSpelersState = (event) => {
+    updateSpelersState = (event) => {
         let veld = event.target.name,
             waarde = event.target.value;
-        this.state.spelers[veld] = waarde;
+        let nieuweSpelers = this.state.spelers
+            .map((speler) => {
+                if (speler.key === veld){
+                    speler.naam = waarde;
+                }
+                return speler;
+            });
         this.setState({
-            spelers: [this.state.spelers[0], this.state.spelers[1], this.state.spelers[2]]
+            spelers: nieuweSpelers
         });
     };
 
@@ -54,18 +57,14 @@ class InvoerenSpelersPage extends Component {
     };
 
     spelerNamenGeldig() {
-        let geldigeNamen = true;
-        this.state.errors = [];
-
-        for (let spelerIndex in this.state.spelers) {
-            if(!this.state.spelers[spelerIndex]) {
-                this.state.errors[spelerIndex] = "Geen lege naam toegestaan";
-                geldigeNamen = false;
-            }
-        }
-
-        this.setState({errors: this.state.errors});
-        return geldigeNamen;
+        this.state.spelers
+            .forEach((speler) => {
+                speler.error = !speler.name ? 'Geen lege naam toegestaan' : '';
+            });
+        return this.state.spelers
+            .filter((speler) => {
+                return speler.error;
+            }).length > 1;
     }
 
     render() {
@@ -75,32 +74,15 @@ class InvoerenSpelersPage extends Component {
                 <form>
                     {this.state.spelers.map((speler) => {
                         return <TextInput
-                            name="0"
-                            value={speler}
-                            onChange={this.setSpelersState}
-                            placeholder="Speler 1"
-                            error={this.state.errors[0]}
-                            autoFocus={true}
+                            key={speler.key}
+                            name={speler.key}
+                            value={speler.naam}
+                            onChange={this.updateSpelersState}
+                            placeholder={speler.placeholder}
+                            error={speler.error}
+                            autoFocus={speler.key === 0}
                         />;
                     })}
-
-                    <TextInput
-                        name="1"
-                        value={this.state.spelers[1]}
-                        onChange={this.setSpelersState}
-                        placeholder="Speler 2"
-                        error={this.state.errors[1]}
-                        autoFocus={false}
-                    />
-
-                    <TextInput
-                        name="2"
-                        value={this.state.spelers[2]}
-                        onChange={this.setSpelersState}
-                        placeholder="Speler 3"
-                        error={this.state.errors[2]}
-                        autoFocus={false}
-                    />
 
                     <input type="button" value="Start de quiz" className="slimsteQuizConfiguratie" onClick={this.bewaarSpelers}/>
                 </form>
