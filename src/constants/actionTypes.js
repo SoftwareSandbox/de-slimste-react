@@ -1,7 +1,8 @@
-import keyMirror from 'react/lib/keyMirror';
+import {keyMirror} from 'fbjs/lib/keyMirror';
 
-const ActionTypes = keyMirror({
-    MAAK_SPELERS: null
-});
+const ActionTypes = {
+    MAAK_SPELERS: "MAAK_SPELERS"
+};
+
 
 export default ActionTypes;
