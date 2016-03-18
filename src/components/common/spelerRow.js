@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Timer from './timer';
-import SpelerAction from '../../actions/SpelerAction';
+import SpelerAction from '../../actions/spelerAction';
 
 class SpelerRow extends Component {
 

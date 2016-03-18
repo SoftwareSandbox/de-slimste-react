@@ -27,9 +27,9 @@ const SpelerAction = {
 
     secondeMinder: function(index){
         Dispatcher.dispatch({
-            actionType:ActionTypes.SECONDE_MINDER,
+            actionType: ActionTypes.SECONDE_MINDER,
             spelerIndex: index
-        })
+        });
     }
 };
 
