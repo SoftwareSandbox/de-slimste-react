@@ -31,36 +31,32 @@ class InvoerenSpelersPage extends Component {
         SpelerStore.removeChangeListener(this._onChange.bind(this));
     }
 
-    updateSpelersState = (event) => {
-        let veld = event.target.name,
-            waarde = event.target.value;
-        let nieuweSpelers = this.state.spelerInputs
-            .map((speler) => {
-                if (speler.key === veld){
-                    speler.naam = waarde;
-                }
-                return speler;
+    createSpelerUpdater(speler) {
+        return (event) => {
+            speler.naam = event.target.value;
+            this.setState({
+                spelerInputs: this.state.spelerInputs
             });
-        this.setState({
-            spelerInputs: nieuweSpelers
-        });
-    };
+        };
+    }
 
-    bewaarSpelers = (event) => {
-        event.preventDefault();
-        if(this.spelerNamenGeldig()) { //TODO Aaron: spelers opslaan in store
-            SpelerAction.createSpelers(this.state.spelerInputs.map((speler) => {
-                return {
-                    key: speler.key,
-                    naam: speler.naam,
-                    score: 60
-                };
-            }));
-            Toastr.success('spelers opgeslagen');
-            // the router is now built on reactjs/history, and it is a first class API in the router for navigating
-            browserHistory.push('driezesnegen');
-        }
-    };
+    createSubmitHandler() {
+        return (event) => {
+            event.preventDefault();
+            if(this.spelerNamenGeldig()) { 
+                SpelerAction.createSpelers(this.state.spelerInputs.map((speler) => {
+                    return {
+                        key: speler.key,
+                        naam: speler.naam,
+                        score: 60
+                    };
+                }));
+                Toastr.success('spelers opgeslagen');
+                // the router is now built on reactjs/history, and it is a first class API in the router for navigating
+                browserHistory.push('driezesnegen');
+            }
+        };
+    }
 
     spelerNamenGeldig() {
         this.state.spelerInputs
@@ -68,9 +64,8 @@ class InvoerenSpelersPage extends Component {
                 speler.error = !speler.name ? 'Geen lege naam toegestaan' : '';
             });
         return this.state.spelerInputs
-            .filter((speler) => {
-                return speler.error;
-            }).length > 1;
+            .filter((speler) => speler.error)
+            .length > 1;
     }
 
     render() {
@@ -83,14 +78,14 @@ class InvoerenSpelersPage extends Component {
                             key={speler.key}
                             name={speler.key}
                             value={speler.naam}
-                            onChange={this.updateSpelersState}
+                            onChange={this.createSpelerUpdater(speler)}
                             placeholder={speler.placeholder}
                             error={speler.error}
                             autoFocus={speler.key === 0}
                         />;
                     })}
 
-                    <input type="button" value="Start de quiz" className="slimsteQuizConfiguratie" onClick={this.bewaarSpelers}/>
+                    <input type="button" value="Start de quiz" className="slimsteQuizConfiguratie" onClick={this.createSubmitHandler()}/>
                 </form>
             </div>
         );
