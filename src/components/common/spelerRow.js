@@ -20,7 +20,7 @@ class SpelerRow extends Component {
         return (timeremaining) => {
             return Math.floor(timeremaining / 1000);
         };
-    };
+    }
 
     render() {
         let className = this.props.speler.geselecteerd ? 'geselecteerdeSpeler' : 'speler';
