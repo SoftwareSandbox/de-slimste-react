@@ -8,7 +8,7 @@ class TextInput extends Component {
         placeholder: PropTypes.string,
         value: PropTypes.string,
         error: PropTypes.string,
-        af: PropTypes.bool
+        autoFocus: PropTypes.bool
     };
 
     constructor(props) {
@@ -18,7 +18,7 @@ class TextInput extends Component {
     render() {
 
         let wrapperClass = 'form-group';
-        if(this.props.error && this.props.error.length > 0) {
+        if(this.props.error) {
             wrapperClass += ' has-error';
         }
 
@@ -29,13 +29,12 @@ class TextInput extends Component {
                     <input type="text"
                             name={this.props.name}
                             className="slimsteQuizConfiguratie"
-                            placeholder={this.props.placeholder}
+                            placeholder={this.props.error || this.props.placeholder}
                             ref={this.props.name}
                             onChange={this.props.onChange}
                             value={this.props.value}
-                            autoFocus={this.props.af ? "autoFocus" : false} 
+                            autoFocus={this.props.autoFocus ? "autoFocus" : false} 
                             />
-                    <div className="input">{this.props.error}</div>
                 </div>
             </div>
             );
