@@ -11,8 +11,9 @@ import NotFoundPage from './components/app';
 import ManageAuthorPage from './components/app';
 
 import InvoerenSpelersPage from './components/pages/invoerenSpelersPage';
-import DrieZesNegenPage from './components/pages/drieZesNegenPage';
+import DrieZesNegenPage from './components/pages/drieZesNegen/drieZesNegenController';
 import OpenDeurPage from './components/pages/openDeurPage';
+import PuzzelOverzichtPage from './components/pages/puzzelOverzichtPage';
 import PuzzelPage from './components/pages/puzzelPage';
 import GalerijPage from './components/pages/galerijPage';
 import CollectiefGeheugenPage from './components/pages/collectiefGeheugenPage';
@@ -25,6 +26,7 @@ render((
             <Route path="home" component={InvoerenSpelersPage}/>
             <Route path="driezesnegen" component={DrieZesNegenPage}/>
             <Route path="opendeur" component={OpenDeurPage}/>
+            <Route path="puzzelOverzicht" component={PuzzelOverzichtPage}/>
             <Route path="puzzel" component={PuzzelPage}/>
             <Route path="galerij" component={GalerijPage}/>
             <Route path="collectiefgeheugen" component={CollectiefGeheugenPage}/>

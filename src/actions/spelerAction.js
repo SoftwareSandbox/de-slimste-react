@@ -35,13 +35,6 @@ const SpelerAction = {
             tijd: nieuweTijd
         });
     }
-
-    // secondeMinder: function(index){
-    //     Dispatcher.dispatch({
-    //         actionType: ActionTypes.SECONDE_MINDER,
-    //         spelerIndex: index
-    //     });
-    // }
 };
 
 export default SpelerAction; 
