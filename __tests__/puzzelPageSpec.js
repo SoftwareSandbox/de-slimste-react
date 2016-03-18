@@ -1,16 +1,16 @@
-jest.unmock('../src/components/pages/puzzelPage');
+jest.unmock('../src/components/pages/finalePage');
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactTestUtils from 'react-addons-test-utils';
 
-import PuzzelPage from '../src/components/pages/puzzelPage';
+import FinalePage from '../src/components/pages/finalePage';
 import Navigator from '../src/components/common/navigator';
 
-describe('PuzzelPage component', () => {
+describe('FinalePage component', () => {
 	it('renders div with Navigator', () => {
-		let puzzelPage = ReactTestUtils.renderIntoDocument(<PuzzelPage/>);
-		let navigator = ReactTestUtils.scryRenderedComponentsWithType(puzzelPage, Navigator);
+		let finalePage = ReactTestUtils.renderIntoDocument(<FinalePage/>);
+		let navigator = ReactTestUtils.scryRenderedComponentsWithType(finalePage, Navigator);
 		expect(navigator).toBeTruthy();
 	});
 
