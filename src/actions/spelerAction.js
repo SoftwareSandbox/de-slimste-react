@@ -2,7 +2,7 @@ import Dispatcher from '../dispatcher/appDispatcher';
 import ActionTypes from '../constants/actionTypes';
 
 //Action creator
-const SpelerActions = {
+const SpelerAction = {
     createSpelers: function(spelers) {
         
         //Action
@@ -26,4 +26,4 @@ const SpelerActions = {
     }
 };
 
-export default SpelerActions;
+export default SpelerAction;

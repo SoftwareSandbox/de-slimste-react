@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Navigation, browserHistory} from 'react-router';
 import Toastr from 'toastr';
-import SpelerAction from '../../actions/SpelerAction';
+import SpelerAction from '../../actions/spelerAction';
 
 import TextInput from '../common/textInput.js';
 
