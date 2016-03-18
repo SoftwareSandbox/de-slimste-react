@@ -49,7 +49,13 @@ class InvoerenSpelersPage extends Component {
     bewaarSpelers = (event) => {
         event.preventDefault();
         if(this.spelerNamenGeldig()) { //TODO Aaron: spelers opslaan in store
-            SpelerAction.createSpelers(this.state.spelers);
+            SpelerAction.createSpelers(this.state.spelers.map((speler) => {
+                return {
+                    key: speler.key,
+                    naam: speler.naam,
+                    score: 60
+                };
+            }));
             Toastr.success('spelers opgeslagen');
             // the router is now built on reactjs/history, and it is a first class API in the router for navigating
             browserHistory.push('driezesnegen');
