@@ -19,8 +19,6 @@ class InvoerenSpelersPage extends Component {
         let veld = event.target.name,
             waarde = event.target.value;
         this.state.spelers[veld] = waarde;
-        let waardeX = this.state.spelers[veld];
-        let x = 0;
         this.setState({
             spelers: [this.state.spelers[0], this.state.spelers[1], this.state.spelers[2]]
         });
@@ -56,14 +54,16 @@ class InvoerenSpelersPage extends Component {
             <div>
                 <h1>Voer de namen van de spelers in!</h1>
                 <form>
-                    <TextInput
-                        name="0"
-                        value={this.state.spelers[0]}
-                        onChange={this.setSpelersState}
-                        placeholder="Speler 1"
-                        error={this.state.errors[0]}
-                        autoFocus={true}
-                    />
+                    {this.state.spelers.map((speler) => {
+                        return <TextInput
+                            name="0"
+                            value={speler}
+                            onChange={this.setSpelersState}
+                            placeholder="Speler 1"
+                            error={this.state.errors[0]}
+                            autoFocus={true}
+                        />;
+                    })}
 
                     <TextInput
                         name="1"
