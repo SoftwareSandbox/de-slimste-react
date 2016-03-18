@@ -43,6 +43,9 @@ class DrieZesNegenController extends Component {
         if(isDrieZesOfNegen){
             SpelerAction.addScoreHuidigeSpeler(10);
         }
+        if(this.state.hasVolgendeVraag){
+            this.volgendeVraag(event);
+        }
     };
 
     render() {
