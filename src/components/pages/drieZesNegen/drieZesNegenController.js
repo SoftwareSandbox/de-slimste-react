@@ -30,7 +30,6 @@ class DrieZesNegenController extends Component {
     }
 
     volgendeVraag = (event) => {
-        debugger;
         var volgendNummer = this.state.vraag.nummer + 1;
         this.setState({vraag: VragenStore.getVraag("DRIE_ZES_NEGEN", volgendNummer)});
     };
