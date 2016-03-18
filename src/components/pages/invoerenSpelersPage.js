@@ -11,7 +11,7 @@ class InvoerenSpelersPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            spelers: [
+            spelerInputs: [
                 {key: "0", naam: '', placeholder: 'Speler 1', error: ''},
                 {key: "1", naam: '', placeholder: 'Speler 2', error: ''},
                 {key: "2", naam: '', placeholder: 'Speler 3', error: ''}
@@ -20,7 +20,7 @@ class InvoerenSpelersPage extends Component {
     }
 
     _onChange() {
-        this.setState({spelers: SpelerStore.getSpelers()});
+        this.setState({spelerInputs: SpelerStore.getSpelers()});
     }
 
     componentWillMount() {
@@ -34,7 +34,7 @@ class InvoerenSpelersPage extends Component {
     updateSpelersState = (event) => {
         let veld = event.target.name,
             waarde = event.target.value;
-        let nieuweSpelers = this.state.spelers
+        let nieuweSpelers = this.state.spelerInputs
             .map((speler) => {
                 if (speler.key === veld){
                     speler.naam = waarde;
@@ -42,14 +42,14 @@ class InvoerenSpelersPage extends Component {
                 return speler;
             });
         this.setState({
-            spelers: nieuweSpelers
+            spelerInputs: nieuweSpelers
         });
     };
 
     bewaarSpelers = (event) => {
         event.preventDefault();
         if(this.spelerNamenGeldig()) { //TODO Aaron: spelers opslaan in store
-            SpelerAction.createSpelers(this.state.spelers.map((speler) => {
+            SpelerAction.createSpelers(this.state.spelerInputs.map((speler) => {
                 return {
                     key: speler.key,
                     naam: speler.naam,
@@ -63,11 +63,11 @@ class InvoerenSpelersPage extends Component {
     };
 
     spelerNamenGeldig() {
-        this.state.spelers
+        this.state.spelerInputs
             .forEach((speler) => {
                 speler.error = !speler.name ? 'Geen lege naam toegestaan' : '';
             });
-        return this.state.spelers
+        return this.state.spelerInputs
             .filter((speler) => {
                 return speler.error;
             }).length > 1;
@@ -78,7 +78,7 @@ class InvoerenSpelersPage extends Component {
             <div>
                 <h1>Voer de namen van de spelers in!</h1>
                 <form>
-                    {this.state.spelers.map((speler) => {
+                    {this.state.spelerInputs.map((speler) => {
                         return <TextInput
                             key={speler.key}
                             name={speler.key}
