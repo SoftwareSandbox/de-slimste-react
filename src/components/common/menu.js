@@ -2,7 +2,8 @@ import React, {Component, PropTypes} from 'react';
 import Spelers from './spelers';
 import SpelerStore from '../../stores/spelerStore';
 import SpelerAction from '../../actions/spelerAction';
-import OpenQuizzerVenster from './openQuizzerVenster';
+
+var quizzerWindow;
 
 class Menu extends Component {
 
@@ -19,7 +20,7 @@ class Menu extends Component {
         onVolgendeSpeler: React.PropTypes.func.isRequired
     };
 
-    volgendeSpeler = (event) => {
+    volgendeSpeler = () => {
         SpelerAction.volgendeSpeler();
     };
 
@@ -31,18 +32,29 @@ class Menu extends Component {
         SpelerAction.stopTimer();
     };
 
+    openQuizzerVenster = () => {
+        quizzerWindow = window.open("#/quizzer", "Quizzers");
+    };
+
+    sendMessage = () => {
+        if (quizzerWindow) {
+            quizzerWindow.postMessage({name: "TEST", message: "Hallo kindjes"}, "*");
+        }
+    };
+
     render() {
         return (
             <div className="menu">
                 <div>
-                    <OpenQuizzerVenster />
                     {this.props.hasVorigeVraag ?
-                        <span className="fa fa-chevron-circle-left menuitem" onClick={this.props.onVorigeVraag}></span> :
+                        <span className="fa fa-chevron-circle-left menuitem"
+                              onClick={this.props.onVorigeVraag}></span> :
                         <span className="fa fa-chevron-circle-left menuitemdisabled"></span>
                     }
                     {this.props.hasVolgendeVraag ?
-                        <span className="fa fa-chevron-circle-right menuitem" onClick={this.props.onVolgendeVraag} ></span> :
-                        <span className="fa fa-chevron-circle-right menuitemdisabled" ></span>
+                        <span className="fa fa-chevron-circle-right menuitem"
+                              onClick={this.props.onVolgendeVraag}></span> :
+                        <span className="fa fa-chevron-circle-right menuitemdisabled"></span>
                     }
                 </div>
                 <div>
@@ -50,7 +62,7 @@ class Menu extends Component {
                     <span className="fa fa-stop menuitem" onClick={this.stopTimer}></span>
                     {this.props.onVraagJuist ?
                         <span className="fa fa-check menuitem" onClick={this.props.onVraagJuist}></span> :
-                        <span className="fa fa-check menuitemdisabled" ></span>
+                        <span className="fa fa-check menuitemdisabled"></span>
                     }
                 </div>
                 <div>
@@ -59,7 +71,8 @@ class Menu extends Component {
                 </div>
                 <div>
                     <span className="fa fa-user menuitem" onClick={this.volgendeSpeler}></span>
-                    <span className="fa fa-link menuitem"></span>
+                    <a className="fa fa-link menuitem" target="_blank" onClick={this.openQuizzerVenster}></a>
+                    <button type="button" onClick={this.sendMessage}>msg chldwndw</button>
                 </div>
             </div>
         );

@@ -1,5 +1,4 @@
 import React from 'react';
-import routes from './routes';
 import { render } from 'react-dom';
 import {IndexRoute, NotFoundRoute, Redirect, Route, Router, hashHistory} from 'react-router';
 
