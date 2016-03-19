@@ -13,7 +13,6 @@ class SpelersFooter extends Component {
     }
 
     _onChange() {
-        console.log(SpelerStore.getTimerGestart());
         this.state = {
                 spelers: SpelerStore.getSpelers(),
                 timerGestart: SpelerStore.getTimerGestart()
