@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ParentWindowEventListener from '../../common/parentWindowEventListener';
 
 class QuizzerStartPage extends Component {
 
@@ -7,7 +8,6 @@ class QuizzerStartPage extends Component {
         this.state = {
             testBericht: "Nog geen signaal gekregen van parent"
         };
-        window.addEventListener("message", this.processBericht.bind(this), false);
     }
 
     processBericht(event){
@@ -19,6 +19,7 @@ class QuizzerStartPage extends Component {
     render() {
         return (
             <div>
+                <ParentWindowEventListener callback={this.processBericht.bind(this)} />
                 <p>Welcome quizzers!</p>
                 <p>{this.state.testBericht}</p>
             </div>
