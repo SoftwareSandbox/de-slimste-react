@@ -30,7 +30,7 @@ class SpelersFooter extends Component {
 
     render() {
         return (
-			<Spelers 
+			<Spelers
                 spelers={this.state.spelers}
                 timerGestart={this.state.timerGestart}
             />

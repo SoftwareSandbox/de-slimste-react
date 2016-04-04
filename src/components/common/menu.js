@@ -2,6 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import Spelers from './spelers';
 import SpelerStore from '../../stores/spelerStore';
 import SpelerAction from '../../actions/spelerAction';
+import Commands from '../../constants/childWindowCommands';
 
 var quizzerWindow;
 
@@ -9,6 +10,8 @@ class Menu extends Component {
 
     constructor(props, context) {
         super(props, context); //It's very important to pass context to super() so that the router will work
+        window.name = "quizmaster";
+        window.synchronizeerVensters = this.synchronizeerVensters;
     }
 
     static propTypes = {
@@ -36,9 +39,13 @@ class Menu extends Component {
         quizzerWindow = window.open("#/quizzer", "Quizzers");
     };
 
-    sendMessage = () => {
+    synchronizeerVensters = () => {
         if (quizzerWindow) {
-            quizzerWindow.postMessage({name: "TEST", message: "Hallo kindjes"}, "*");
+            quizzerWindow.postMessage({
+                name: Commands.INITIALIZEER_SPELERS,
+                spelers: SpelerStore.getSpelers(),
+                geselecteerdeSpeler: SpelerStore.getGeselecteerdeSpelerIndex()
+            }, "*");
         }
     };
 
@@ -72,7 +79,6 @@ class Menu extends Component {
                 <div>
                     <span className="fa fa-user menuitem" onClick={this.volgendeSpeler}></span>
                     <a className="fa fa-link menuitem" target="_blank" onClick={this.openQuizzerVenster}></a>
-                    <button type="button" onClick={this.sendMessage}>msg chldwndw</button>
                 </div>
             </div>
         );

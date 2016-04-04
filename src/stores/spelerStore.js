@@ -9,15 +9,15 @@ let _spelers = {spelers: [], geselecteerdeSpelerIndex: 0};
 const SpelerStore = Object.assign({}, EventEmitter.prototype, {
 
 
-    addChangeListener: function(callback) {
+    addChangeListener: function (callback) {
         this.on(CHANGE_EVENT, callback);
     },
 
-    removeChangeListener: function(callback) {
+    removeChangeListener: function (callback) {
         this.removeListener(CHANGE_EVENT, callback);
     },
 
-    emitChange: function() {
+    emitChange: function () {
         this.emit(CHANGE_EVENT);
     },
 
@@ -25,9 +25,13 @@ const SpelerStore = Object.assign({}, EventEmitter.prototype, {
         return _spelers.spelers;
     },
 
+    getGeselecteerdeSpelerIndex: () => {
+        return _spelers.geselecteerdeSpelerIndex;
+    },
+
     secondeMinder: (index) => {
         _spelers.spelers[index].score = _spelers.spelers[index].score - 1;
-    }, 
+    },
 
     updateTijd: (index, tijd) => {
         _spelers.spelers[index].score = tijd;
@@ -60,10 +64,15 @@ const SpelerStore = Object.assign({}, EventEmitter.prototype, {
 Dispatcher.register((action) => {
 
 
-    switch(action.actionType) {
+    switch (action.actionType) {
         case ActionTypes.MAAK_SPELERS:
             _spelers.spelers = action.spelers;
             SpelerStore.selecteerSpeler(0);
+            SpelerStore.emitChange();
+            break;
+        case ActionTypes.INITIALIZEER_SPELERS:
+            _spelers.spelers = action.spelers;
+            SpelerStore.selecteerSpeler(action.geselecteerdeSpeler);
             SpelerStore.emitChange();
             break;
         // case ActionTypes.SECONDE_MINDER:
@@ -91,12 +100,11 @@ Dispatcher.register((action) => {
             SpelerStore.emitChange();
             break;
         default:
-            //do nothing
+        //do nothing
     }
 });
 
 export default SpelerStore;
-
 
 
 /* TOEVOEGEN AAN PAGES DIE DE SPELERS NODIG HEBBEN: _onChange, componentWillMount, componentWillUnmount

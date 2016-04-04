@@ -1,27 +1,34 @@
 import React, {Component} from 'react';
 import ParentWindowEventListener from '../../common/parentWindowEventListener';
+import SpelerAction from '../../../actions/spelerAction';
+import Commands from '../../../constants/childWindowCommands';
+import SpelersFooter from '../../common/spelersFooter';
 
 class QuizzerStartPage extends Component {
 
-	constructor(props, context) {
+    constructor(props, context) {
         super(props, context); //It's very important to pass context to super() so that the router will work
-        this.state = {
-            testBericht: "Nog geen signaal gekregen van parent"
-        };
+        this.state = {};
+        window.opener.synchronizeerVensters();
     }
 
-    processBericht(event){
-        if(event.data.name === "TEST"){
-            this.setState({testBericht: event.data.message});
+    processBericht(event) {
+        console.log(event);
+        if (event.data.name === Commands.INITIALIZEER_SPELERS) {
+            SpelerAction.initializeerSpelers(event.data.spelers, event.data.geselecteerdeSpeler);
         }
+    }
+
+    click() {
+        console.log(window.opener);
+        window.opener.sendMessage();
     }
 
     render() {
         return (
             <div>
-                <ParentWindowEventListener callback={this.processBericht.bind(this)} />
-                <p>Welcome quizzers!</p>
-                <p>{this.state.testBericht}</p>
+                <ParentWindowEventListener callback={this.processBericht.bind(this)}/>
+                <SpelersFooter />
             </div>
 
         );
